@@ -14,6 +14,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .hero__layout { display: flex; align-items: center; gap: 3rem; }
+    .hero__logo { height: 260px; width: auto; flex-shrink: 0; margin-top: -3.5rem; }
+    .hero__text-col { flex: 1; }
+    @media (max-width: 768px) {
+      .hero__layout { flex-direction: column; align-items: flex-start; }
+      .hero__logo { height: 150px; margin-top: 0; }
+    }
+  </style>
 </head>
 <body>
 
@@ -25,7 +34,6 @@
     <!-- Brand bar -->
     <div class="brand-bar">
       <a href="/" class="brand-bar__logo-wrap">
-        <img src="assets/logo.png" alt="Tier-1 Off-Grid" class="brand-bar__logo">
         <div class="brand-bar__text">
           <span class="brand-bar__wordmark">TIER-1 OFF-GRID</span>
           <span class="brand-bar__tagline">Real tech for people serious about sovereignty.</span>
@@ -74,12 +82,17 @@
     <div class="hero__corner hero__corner--br"></div>
 
     <div class="container">
-      <span class="eyebrow">TIER-1 OFF-GRID // OPERATIONAL STATUS: ONLINE</span>
-      <h1 class="hero__heading">Real tech for people<br>serious about <span class="hero__accent">sovereignty.</span></h1>
-      <p class="hero__body">No fluff. No corporate hedging. Straight talk on power, comms, security, privacy, and survival — for the liberty-minded American who plans ahead.</p>
-      <div class="hero__cta-group">
-        <a href="gear/" class="btn btn--primary">EXPLORE GEAR</a>
-        <a href="newsletter/" class="btn btn--ghost">READ THE NEWSLETTER</a>
+      <div class="hero__layout">
+        <img src="assets/logo.png" alt="Tier-1 Off-Grid" class="hero__logo">
+        <div class="hero__text-col">
+          <span class="eyebrow">TIER-1 OFF-GRID // OPERATIONAL STATUS: ONLINE</span>
+          <h1 class="hero__heading">Real tech for people<br>serious about <span class="hero__accent">sovereignty.</span></h1>
+          <p class="hero__body">No fluff. No corporate hedging. Straight talk on power, comms, security, privacy, and survival — for the liberty-minded American who plans ahead.</p>
+          <div class="hero__cta-group">
+            <a href="gear/" class="btn btn--primary">EXPLORE GEAR</a>
+            <a href="newsletter/" class="btn btn--ghost">READ THE NEWSLETTER</a>
+          </div>
+        </div>
       </div>
     </div>
 
