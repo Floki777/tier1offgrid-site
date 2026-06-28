@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Hydro — The Forgotten Power Source That Works 24/7 | Tier-1 Off-Grid</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&family=Share+Tech+Mono&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://tier1offgrid.com/css/style.css">
+  <style>
+    :root {
+      --t1-black:   #111111;
+      --t1-dark:    #1A1A1A;
+      --t1-surface: #242424;
+      --t1-card:    #2D2D2D;
+      --t1-border:  #3D3D3D;
+      --t1-orange:  #C44A1A;
+      --t1-white:   #F0EDEA;
+      --t1-gray:    #888888;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--t1-black);
+      color: var(--t1-white);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    /* ── Nav ── */
+    .site-nav {
+      background: var(--t1-dark);
+      border-bottom: 1px solid var(--t1-border);
+      padding: 1rem 2rem;
+    }
+    .site-nav a {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--t1-white);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+    }
+    .site-nav a:hover { color: var(--t1-orange); }
+
+    /* ── Layout ── */
+    .article-wrap {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 5rem;
+    }
+
+    /* ── Article header ── */
+    .article-header {
+      border-left: 3px solid var(--t1-orange);
+      padding-left: 1.25rem;
+      margin-bottom: 2.5rem;
+    }
+    .pillar-eyebrow {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--t1-orange);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .article-header h1 {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      color: var(--t1-white);
+      line-height: 1.15;
+      margin-bottom: 0.5rem;
+    }
+    .article-date {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--t1-gray);
+      letter-spacing: 0.12em;
+    }
+
+    /* ── Content typography ── */
+    .article-content h2 {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: 1.65rem;
+      color: var(--t1-white);
+      margin: 2.75rem 0 1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--t1-border);
+    }
+    .article-content h3 {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--t1-orange);
+      margin: 2rem 0 0.75rem;
+    }
+    .article-content h4 {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--t1-gray);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin: 1.75rem 0 0.6rem;
+    }
+    .article-content p {
+      margin-bottom: 1.25rem;
+    }
+    .article-content strong {
+      color: var(--t1-white);
+      font-weight: 600;
+    }
+    .article-content em {
+      color: var(--t1-gray);
+      font-style: italic;
+    }
+    .article-content ul,
+    .article-content ol {
+      margin: 0.75rem 0 1.25rem 1.5rem;
+    }
+    .article-content li {
+      margin-bottom: 0.45rem;
+    }
+    .article-content hr {
+      border: none;
+      border-top: 1px solid var(--t1-border);
+      margin: 2.25rem 0;
+    }
+    .article-content a {
+      color: var(--t1-orange);
+      text-decoration: none;
+    }
+    .article-content a:hover { text-decoration: underline; }
+
+    /* ── Tables ── */
+    .article-content table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.75rem 0;
+      font-size: 0.9rem;
+    }
+    .article-content thead {
+      background: var(--t1-surface);
+      border-bottom: 2px solid var(--t1-orange);
+    }
+    .article-content th {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--t1-orange);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.75rem 1rem;
+      text-align: left;
+    }
+    .article-content td {
+      padding: 0.65rem 1rem;
+      border-bottom: 1px solid var(--t1-border);
+    }
+    .article-content tr:nth-child(even) td {
+      background: var(--t1-surface);
+    }
+
+    /* ── Cards / callout blocks ── */
+    .article-content blockquote {
+      background: var(--t1-card);
+      border-left: 3px solid var(--t1-orange);
+      padding: 1rem 1.25rem;
+      margin: 1.5rem 0;
+      color: var(--t1-gray);
+    }
+
+    /* ── Code ── */
+    .article-content code {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.85em;
+      background: var(--t1-surface);
+      color: var(--t1-orange);
+      padding: 0.15em 0.4em;
+      border: 1px solid var(--t1-border);
+    }
+    .article-content pre {
+      background: var(--t1-surface);
+      border-left: 3px solid var(--t1-orange);
+      padding: 1rem 1.25rem;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+    .article-content pre code {
+      background: none;
+      border: none;
+      padding: 0;
+      color: var(--t1-white);
+    }
+
+    /* ── Footer / back button ── */
+    .article-footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--t1-border);
+    }
+    .btn-back {
+      display: inline-block;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--t1-white);
+      background: var(--t1-surface);
+      text-decoration: none;
+      padding: 0.65rem 1.4rem;
+      clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-back:hover {
+      background: var(--t1-orange);
+      color: var(--t1-white);
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 600px) {
+      .article-wrap { padding: 1.5rem 1rem 3rem; }
+      .site-nav { padding: 0.75rem 1rem; }
+      .article-content table { font-size: 0.78rem; }
+      .article-content th,
+      .article-content td { padding: 0.5rem 0.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="/">Tier-1 Off-Grid</a>
+</nav>
+
+<div class="article-wrap">
+
+  <header class="article-header">
+    <span class="pillar-eyebrow">Power / PILLAR-01</span>
+    <h1>Mini Hydro — The Forgotten Power Source That Works 24/7</h1>
+    <time class="article-date">2026-06-27</time>
+  </header>
+
+  <div class="article-content">
+    <h2>Even When the Sun Doesn&#39;t</h2>
+<p>If you&#39;ve got moving water on your land — a creek, a stream, a decent 
+slope — you may be sitting on the most reliable off-grid power source 
+nobody talks about.</p>
+<p>Solar gets all the glory. Wind gets the Instagram posts. But micro-hydro 
+runs around the clock, rain or shine, no batteries required. Let&#39;s break 
+it down.</p>
+<hr>
+<h2>What Is a Mini Hydro System?</h2>
+<p>A micro or mini hydro system converts the kinetic energy of flowing water 
+into electricity. Water flows through a pipe called a penstock, spins a 
+turbine, and that turbine drives a generator. Simple physics. No moving 
+parts exposed to weather. No fuel. No panels to clean.</p>
+<p>Two variables determine your output:</p>
+<p><strong>Head</strong> — the vertical drop of the water measured in feet.
+<strong>Flow</strong> — how much water is moving measured in GPM.</p>
+<p>More head plus more flow equals more power. You don&#39;t need a raging river. 
+A modest stream with good elevation drop can power an entire homestead.</p>
+<hr>
+<h2>Power Output: What to Expect</h2>
+<table>
+<thead>
+<tr>
+<th>System Size</th>
+<th>Typical Output</th>
+<th>Good For</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Pico (DIY-friendly)</td>
+<td>100W–500W</td>
+<td>Lighting, charging, small loads</td>
+</tr>
+<tr>
+<td>Micro</td>
+<td>500W–5kW</td>
+<td>Full homestead with conservation</td>
+</tr>
+<tr>
+<td>Mini</td>
+<td>5kW–100kW</td>
+<td>Small farm or community</td>
+</tr>
+</tbody></table>
+<p>A well-designed 1–2kW micro-hydro system running 24/7 generates 
+720–1,440 kWh per month. The average American home uses about 900 kWh 
+per month. Do the math.</p>
+<hr>
+<h2>Average Cost</h2>
+<table>
+<thead>
+<tr>
+<th>Setup</th>
+<th>Cost Range</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>DIY pico system</td>
+<td>$300–$1,500</td>
+</tr>
+<tr>
+<td>Pre-built micro system (1–5kW)</td>
+<td>$3,000–$15,000</td>
+</tr>
+<tr>
+<td>Professional mini system (5kW+)</td>
+<td>$15,000–$60,000+</td>
+</tr>
+</tbody></table>
+<p>A properly sized 2kW system professionally installed typically runs 
+$8,000–$20,000 depending on site complexity. That sounds steep until 
+you price out the solar and battery bank needed to achieve the same 
+reliable 24/7 output.</p>
+<hr>
+<h2>Pros</h2>
+<p>✔ <strong>Runs 24/7</strong> — no sun, no problem. Night, winter, cloudy season, 
+doesn&#39;t matter.
+✔ <strong>Low maintenance</strong> — fewer moving parts than a generator. Annual 
+inspections, basic cleaning.
+✔ <strong>No fuel dependency</strong> — completely off the supply chain.
+✔ <strong>Long lifespan</strong> — quality turbines last 20–30+ years.
+✔ <strong>Silent operation</strong> — no generator noise.
+✔ <strong>Small battery bank needed</strong> — continuous output means you don&#39;t 
+need massive storage.</p>
+<hr>
+<h2>Cons</h2>
+<p>✗ <strong>Site-dependent</strong> — no moving water, no system. Period.
+✗ <strong>Permitting and water rights</strong> — Western water law is complicated. 
+Know your rights before you build. Some states are hostile to water 
+diversion even on private land.
+✗ <strong>Seasonal variation</strong> — drought years reduce output.
+✗ <strong>Intake clogging</strong> — debris and sediment require regular attention.
+✗ <strong>Higher upfront cost</strong> than comparable solar.
+✗ <strong>Regulatory scrutiny</strong> — diverting water draws attention in some 
+jurisdictions.</p>
+<hr>
+<h2>Gear Worth Knowing: American-Made and Veteran-Supported First</h2>
+<p>When you&#39;re ready to invest in a real system, buy American where you can.</p>
+<h3>🇺🇸 American-Made — Start Here</h3>
+<p><strong>Harris Hydroelectric</strong> (Petrolia, CA) is the gold standard for 
+American-built micro-hydro turbines. Family operation, made in the USA, 
+running since 1986. Their Pelton turbines are purpose-built for off-grid 
+homestead systems in the 100W–5kW range. Expect to pay more. Worth every 
+dollar. harriswaterpower.com</p>
+<p><strong>Canyon Hydro</strong> (Deming, WA) builds American turbines for serious 
+installations. More industrial scale but worth knowing when you&#39;re ready 
+to go big.</p>
+<p><strong>Dankoff Solar</strong> (Santa Fe, NM) — American-made pumps and water system 
+components frequently used in hydro setups. Trusted in the off-grid 
+community for decades.</p>
+<p><strong>Aims Power</strong> (Reno, NV) — American company, inverters and power 
+components built specifically for off-grid and backup applications. Solid 
+reputation in the homestead and prepper community.</p>
+<h3>🇺🇸 Veteran-Supported</h3>
+<p><strong>Battleborn Batteries</strong> (Reno, NV) — American-assembled lithium iron 
+phosphate batteries, actively supports veteran causes, and earned a 
+bulletproof reputation in the off-grid and overlanding communities. 
+Pricier than imports. They stand behind their product and their country. 
+These pair excellently with any hydro charge controller setup.</p>
+<hr>
+<h2>A Word on Foreign and Budget Options</h2>
+<p>There are Chinese-manufactured Pelton wheel kits and PMAs on Amazon and 
+AliExpress in the $80–$300 range. Some preppers use them. They work — 
+until they don&#39;t. Quality control is inconsistent, support is nonexistent, 
+and you&#39;re sending money to a government that would love to see American 
+homesteaders dependent and powerless.</p>
+<p>If budget is the only path right now, go in with eyes open. Buy a spare. 
+Don&#39;t make it your primary system. Replace it with American iron as soon 
+as you can.</p>
+<p><strong>Goal Zero</strong> sits in the middle ground — Utah-based company, 
+Chinese-manufactured components. Their battery stations are solid and 
+widely available, but know what you&#39;re buying.</p>
+<hr>
+<h2>DIY Section: Build It Before You Need It — Or After</h2>
+<hr>
+<h3>Tier 1 — The Prepared Builder</h3>
+<p><em>You read this months ago. You acted. Here&#39;s what you built.</em></p>
+<p><strong>Parts list:</strong></p>
+<ul>
+<li>Harris Hydroelectric PMA — American-made, purpose-built, long-term solution</li>
+<li>Pelton or Turgo wheel — sourced or fabricated from HDPE</li>
+<li>2&quot;–4&quot; PVC or HDPE penstock from farm supply</li>
+<li>Aims Power PWM charge controller — American-assembled</li>
+<li>Battleborn LiFePO4 battery bank — American, veteran-supported</li>
+<li>Dump load — water heater element wired in parallel. Non-negotiable.</li>
+<li>Galvanized mesh intake screen — DIY in a bucket or barrel housing</li>
+</ul>
+<p><strong>Build sequence:</strong></p>
+<ol>
+<li>Measure your head with a phone inclinometer app and tape measure. 
+Time your flow with a bucket and stopwatch.</li>
+<li>Run penstock from intake down to turbine location. Minimize bends. 
+Gravity does the work.</li>
+<li>Mount turbine and PMA on a wood or steel frame.</li>
+<li>Wire PMA to charge controller, controller to battery bank.</li>
+<li>Wire dump load in parallel off the battery bank terminals.</li>
+<li>Connect 12V loads or a small inverter.</li>
+<li>Screen your intake. Check daily until you know your water&#39;s behavior.</li>
+</ol>
+<p><strong>Rough cost: $400–$900 for 200–500W.</strong> Runs quietly. Runs forever. 
+Runs while you sleep.</p>
+<hr>
+<h3>Tier 2 — Day Zero Survivor</h3>
+<p><em>Grid&#39;s gone. Stores are looted. Trucks stopped running three days ago. 
+You&#39;ve got a creek, a garage, and whatever&#39;s left on your property. 
+Here&#39;s how you make power.</em></p>
+<h4>The Junkyard Alternator Rig</h4>
+<p>Every neighborhood has dead cars. Every dead car has an alternator. 
+That alternator is your emergency generator.</p>
+<p><strong>What you&#39;re pulling from the vehicle:</strong></p>
+<ul>
+<li>Car alternator — GM, Ford, Dodge, doesn&#39;t matter. Internal voltage 
+regulator preferred. Most post-1980 alternators have one. Pull it 
+with a basic wrench set in 20 minutes.</li>
+<li>Serpentine belt or V-belt — grab it off the same vehicle</li>
+<li>Pulleys — one large, one small. You want the water wheel pulley 
+4–6x larger than the alternator pulley to step up RPM.</li>
+<li>12V car battery — to excite the alternator field winding</li>
+<li>Jumper cables or 10–12 gauge wire</li>
+<li>A blocking diode — pulled from any old inverter, battery charger, 
+or solar charge controller</li>
+</ul>
+<p><strong>What you&#39;re building:</strong></p>
+<p>A wood or steel frame mount from dimensional lumber and lag bolts. 
+Mount the alternator. Run the belt from your water wheel shaft pulley 
+to the alternator pulley. Water spins the wheel, belt steps up the RPM, 
+alternator generates 12–14V DC.</p>
+<p><strong>Exciting the field:</strong></p>
+<p>Touch the small exciter terminal on the alternator briefly to your 12V 
+battery positive. Once spinning at speed it sustains itself.</p>
+<p><strong>Output:</strong> 30–80 amps at 12–14V. Up to 960 watts. Enough to run:</p>
+<ul>
+<li>LED lighting for the whole house</li>
+<li>Ham radio and communications gear</li>
+<li>Phone and battery charging station</li>
+<li>Small chest freezer with load management</li>
+<li>Fan, CPAP, basic medical equipment</li>
+</ul>
+<hr>
+<h4>The Salvage Water Wheel — No Pelton Wheel? No Problem.</h4>
+<p><strong>Build it from what&#39;s around you:</strong></p>
+<ul>
+<li>5-gallon buckets cut in half lengthwise — bolted to a wooden or 
+metal spoke wheel as scoop blades</li>
+<li>Axle: steel pipe, rebar, or a pulled car axle shaft</li>
+<li>Frame: 2x6 lumber lag-bolted to two posts driven into the creek bank</li>
+<li>Let the current fill each bucket, rotate the wheel, dump, repeat</li>
+</ul>
+<p>Low RPM by nature. Pair it with the belt-and-pulley gear-up to hit 
+alternator threshold. Buildable in an afternoon with hand tools. No 
+power tools required if you have a handsaw and a charged drill.</p>
+<hr>
+<h4>No Creek? Other Moving Water Options</h4>
+<ul>
+<li><strong>Roof rainwater to barrel drop</strong> — limited output but charges a 
+radio or phone in a decent storm</li>
+<li><strong>Gravity-fed irrigation lines</strong> — if your property has pressure 
+lines with elevation drop, a small inline turbine driving a salvaged 
+motor can trickle-charge a battery bank</li>
+<li><strong>Community resource</strong> — a neighbor&#39;s pond with slope becomes a 
+shared asset worth organizing around in a true grid-down scenario</li>
+</ul>
+<hr>
+<h4>What to Stockpile Now So Tier 2 Is Easier</h4>
+<ul>
+<li>V-belt assortment — $15–$30 at any auto parts store, buy today</li>
+<li>Assorted pulleys — farm supply or hardware store</li>
+<li>Blocking diodes — pull from old inverters and battery chargers 
+before you need them</li>
+<li>10–12 gauge wire, ring terminals, inline fuse holders</li>
+<li>A spare alternator — $20–$40 at any Pick-N-Pull junkyard right now</li>
+</ul>
+<p><em>Total emergency rig cost if you prep the parts today: under $100.</em>
+<em>Total cost starting from scratch on Day Zero: whatever&#39;s around you 
+and how fast you can think.</em></p>
+<hr>
+<h2>The Mindset</h2>
+<p>Gear is great. Knowledge is better. But the man who can look at a dead 
+car, a running creek, and a pile of lumber and see a working power plant 
+— that man doesn&#39;t need a store to be open, a grid to be running, or a 
+government to tell him he&#39;s going to be okay.</p>
+<p>That&#39;s what Tier-1 Off-Grid is about.</p>
+<p>Buy American. Build to last. Water doesn&#39;t have an off switch.</p>
+<p><em>— Tier-1 Off-Grid</em></p>
+<hr>
+<p><em>Next week: EMP hardening your power system — what actually works and 
+what&#39;s marketing.</em></p>
+<p><em>Found this useful? Forward it to someone serious about sovereignty. 
+Not subscribed yet — fix that.</em></p>
+<hr>
+
+  </div>
+
+  <footer class="article-footer">
+    <a href="/articles/" class="btn-back">← Back to Articles</a>
+  </footer>
+
+</div>
+
+</body>
+</html>
+<!-- Content will be copied from private repo dist/articles/POWER-HYDRO-001.html -->

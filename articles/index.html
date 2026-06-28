@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Field-tested reviews, setup guides, and tactical intel for liberty-minded Americans. All articles from Tier-1 Off-Grid.">
+  <meta name="theme-color" content="#111111">
+  <meta property="og:title" content="All Articles — Tier-1 Off-Grid">
+  <meta property="og:description" content="Field-tested reviews, setup guides, and no-fluff tactical intel for the liberty-minded American who plans ahead.">
+  <meta property="og:url" content="https://www.tier1offgrid.com/articles/">
+  <meta property="og:type" content="website">
+  <title>All Articles — Tier-1 Off-Grid</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .page-banner {
+      padding-top: calc(var(--header-h) + 4rem);
+      padding-bottom: 3.5rem;
+      background-color: var(--t1-dark);
+      background-image:
+        linear-gradient(rgba(61, 61, 61, 0.18) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(61, 61, 61, 0.18) 1px, transparent 1px);
+      background-size: 50px 50px;
+      border-bottom: 1px solid var(--t1-border);
+    }
+
+    .page-banner .section-heading {
+      font-size: clamp(2rem, 4vw, 3.25rem);
+    }
+
+    .articles-listing {
+      padding: 4rem 0 6rem;
+      background: var(--t1-surface);
+      border-bottom: 1px solid var(--t1-border);
+    }
+
+    .article-card__date {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      color: var(--t1-gray);
+      letter-spacing: 0.1em;
+      margin-bottom: 0.1rem;
+    }
+
+    .article-card--queued {
+      opacity: 0.45;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ======================================================
+       SITE HEADER
+       ====================================================== -->
+  <header class="site-header" id="siteHeader">
+
+    <div class="brand-bar">
+      <a href="../" class="brand-bar__logo-wrap">
+        <img src="../assets/logo.png" alt="Tier-1 Off-Grid" class="brand-bar__logo">
+        <div class="brand-bar__text">
+          <span class="brand-bar__wordmark">TIER-1 OFF-GRID</span>
+          <span class="brand-bar__tagline">Real tech for people serious about sovereignty.</span>
+        </div>
+      </a>
+      <div class="brand-bar__deco" aria-hidden="true">
+        <div class="brand-bar__bars">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <p class="brand-bar__status">// SYS:ONLINE // GRID:ACTIVE // COMMS:SECURE // ENC:ON // FREQ:CLEAR //</p>
+      </div>
+    </div>
+
+    <nav class="nav" id="nav">
+      <div class="nav__inner">
+        <ul class="nav__links" id="navLinks">
+          <li><a href="../pillars/power.html">POWER</a></li>
+          <li><a href="../pillars/comms.html">COMMS</a></li>
+          <li><a href="../pillars/security.html">SECURITY</a></li>
+          <li><a href="../pillars/privacy.html">PRIVACY</a></li>
+          <li><a href="../pillars/water-food.html">WATER &amp; FOOD</a></li>
+          <li><a href="../pillars/gear.html">GEAR</a></li>
+          <li><a href="../pillars/health.html">HEALTH</a></li>
+        </ul>
+        <a href="../newsletter/" class="btn btn--primary nav__cta">JOIN THE GRID</a>
+        <button class="nav__hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+  </header>
+
+  <!-- ======================================================
+       PAGE BANNER
+       ====================================================== -->
+  <section class="page-banner">
+    <div class="container">
+      <span class="eyebrow">FIELD INTELLIGENCE // ARTICLES</span>
+      <h1 class="section-heading">All Articles</h1>
+      <p class="section-sub">Field-tested reviews, step-by-step build guides, and no-fluff tactical intel. New pieces drop as they're ready.</p>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       ARTICLES LISTING
+       ====================================================== -->
+  <section class="articles-listing">
+    <div class="container">
+      <div class="articles__grid">
+
+        <!-- PUBLISHED: POWER-HYDRO-001 -->
+        <article class="card article-card">
+          <div class="article-card__meta">
+            <span class="eyebrow" style="margin:0">PILLAR-01 // POWER</span>
+            <span class="article-card__status">PUBLISHED</span>
+          </div>
+          <span class="article-card__date">2026-06-27</span>
+          <h3 class="article-card__title">Mini Hydro: The Forgotten Power Source That Works 24/7</h3>
+          <p class="article-card__excerpt">Solar and wind get all the press, but if you have moving water on your property, micro-hydro runs around the clock regardless of weather. Here's what it actually takes to set one up.</p>
+          <a href="POWER-HYDRO-001.html" class="card__link">READ ARTICLE &rarr;</a>
+        </article>
+
+        <!-- QUEUED -->
+        <article class="card article-card article-card--queued" aria-hidden="true">
+          <div class="article-card__meta">
+            <span class="eyebrow" style="margin:0">POWER // REVIEW</span>
+            <span class="article-card__status">QUEUED</span>
+          </div>
+          <h3 class="article-card__title">Jackery Explorer 2000 Plus: Does It Actually Hold Up Off-Grid?</h3>
+          <p class="article-card__excerpt">Real-world numbers — battery drain under load, solar recharge times, and whether it's worth $1,800 of your prep budget.</p>
+        </article>
+
+        <!-- QUEUED -->
+        <article class="card article-card article-card--queued" aria-hidden="true">
+          <div class="article-card__meta">
+            <span class="eyebrow" style="margin:0">COMMS // GUIDE</span>
+            <span class="article-card__status">QUEUED</span>
+          </div>
+          <h3 class="article-card__title">Build a Meshtastic Mesh Network for Under $100</h3>
+          <p class="article-card__excerpt">Parts list, firmware flash, and node placement strategy. Off-grid encrypted messaging without cell towers or internet.</p>
+        </article>
+
+        <!-- QUEUED -->
+        <article class="card article-card article-card--queued" aria-hidden="true">
+          <div class="article-card__meta">
+            <span class="eyebrow" style="margin:0">SECURITY // GUIDE</span>
+            <span class="article-card__status">QUEUED</span>
+          </div>
+          <h3 class="article-card__title">No-Cloud Home Security: Full PoE Camera and Local NVR Setup</h3>
+          <p class="article-card__excerpt">Reolink cameras, a local NVR, and zero subscription fees. Your footage stays on your property — not a server farm in Virginia.</p>
+        </article>
+
+        <!-- QUEUED -->
+        <article class="card article-card article-card--queued" aria-hidden="true">
+          <div class="article-card__meta">
+            <span class="eyebrow" style="margin:0">DIGITAL PRIVACY // GUIDE</span>
+            <span class="article-card__status">QUEUED</span>
+          </div>
+          <h3 class="article-card__title">De-Googling Your Life in 2026: The Complete Playbook</h3>
+          <p class="article-card__excerpt">Every Google service replaced with a privacy-respecting alternative. Step-by-step, no technical background required.</p>
+        </article>
+
+        <!-- QUEUED -->
+        <article class="card article-card article-card--queued" aria-hidden="true">
+          <div class="article-card__meta">
+            <span class="eyebrow" style="margin:0">WATER &amp; FOOD // REVIEW</span>
+            <span class="article-card__status">QUEUED</span>
+          </div>
+          <h3 class="article-card__title">Big Berkey vs. Alexapure Pro: Which Filter Actually Wins?</h3>
+          <p class="article-card__excerpt">Side-by-side test on flow rate, filtration specs, cost per gallon, and long-term reliability. One clear answer.</p>
+        </article>
+
+        <!-- QUEUED -->
+        <article class="card article-card article-card--queued" aria-hidden="true">
+          <div class="article-card__meta">
+            <span class="eyebrow" style="margin:0">GEAR &amp; TACTICS // GUIDE</span>
+            <span class="article-card__status">QUEUED</span>
+          </div>
+          <h3 class="article-card__title">What's Actually in My Bug-Out Bag</h3>
+          <p class="article-card__excerpt">No sponsored fluff, no $500 mystery boxes. The real loadout — what I carry, why each item made the cut, and what I cut.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       FOOTER
+       ====================================================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+
+      <div class="footer__brand">
+        <a href="../" class="footer__brand-link">
+          <img src="../assets/logo.png" alt="Tier-1 Off-Grid" class="footer__logo">
+          <span class="footer__wordmark">TIER-1 OFF-GRID</span>
+        </a>
+        <p class="footer__tagline">"Real tech for people serious about sovereignty."</p>
+      </div>
+
+      <nav class="footer__nav" aria-label="Footer navigation">
+        <div class="footer__col">
+          <h4 class="footer__col-heading">PILLARS</h4>
+          <ul>
+            <li><a href="../pillars/power.html">Power</a></li>
+            <li><a href="../pillars/comms.html">Comms</a></li>
+            <li><a href="../pillars/security.html">Security</a></li>
+            <li><a href="../pillars/privacy.html">Digital Privacy</a></li>
+            <li><a href="../pillars/water-food.html">Water &amp; Food</a></li>
+            <li><a href="../pillars/gear.html">Gear &amp; Tactics</a></li>
+            <li><a href="../pillars/health.html">Health Sovereignty</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-heading">PLATFORMS</h4>
+          <ul>
+            <li><a href="#" rel="noopener noreferrer">Substack</a></li>
+            <li><a href="#" rel="noopener noreferrer">Rumble</a></li>
+            <li><a href="#" rel="noopener noreferrer">Gab</a></li>
+            <li><a href="#" rel="noopener noreferrer">Odysee</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-heading">RESOURCES</h4>
+          <ul>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="index.html">Articles</a></li>
+            <li><a href="../gear/">Gear Reviews</a></li>
+            <li><a href="../newsletter/">Newsletter</a></li>
+          </ul>
+        </div>
+      </nav>
+
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container footer__bottom-inner">
+        <p class="footer__legal">&copy; 2026 Tier-1 Off-Grid. Some links on this site are affiliate links. We only recommend gear we'd use ourselves &mdash; your purchase helps fund this operation at no extra cost to you.</p>
+        <p class="footer__credit">Built with pure HTML/CSS/JS. No tracking. No Big Tech.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
