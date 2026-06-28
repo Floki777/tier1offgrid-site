@@ -558,6 +558,83 @@ h1, h2, h3, h4 {
 }
 
 /* ============================================================
+   ARTICLES PREVIEW
+   ============================================================ */
+.articles {
+  padding: 5rem 0;
+  background: var(--t1-surface);
+  border-top: 1px solid var(--t1-border);
+  border-bottom: 1px solid var(--t1-border);
+}
+
+.articles__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.article-card {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  border-radius: 0;
+  transition: background 0.15s;
+}
+
+.article-card:hover {
+  background: var(--t1-card);
+}
+
+.article-card__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.2rem;
+}
+
+.article-card__status {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.12em;
+  color: var(--t1-orange);
+  background: var(--t1-orange-dim);
+  padding: 0.2rem 0.5rem;
+  text-transform: uppercase;
+  white-space: nowrap;
+  opacity: 0.85;
+}
+
+.article-card__title {
+  font-size: 1.1rem;
+  color: var(--t1-white);
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+  flex: 1;
+}
+
+.article-card__excerpt {
+  font-size: 0.85rem;
+  color: var(--t1-gray);
+  line-height: 1.65;
+}
+
+.article-card__coming {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  color: var(--t1-gray);
+  text-transform: uppercase;
+  margin-top: 0.25rem;
+}
+
+.articles__cta {
+  text-align: center;
+}
+
+/* ============================================================
    GEAR PREVIEW
    ============================================================ */
 .gear {
@@ -847,6 +924,10 @@ h1, h2, h3, h4 {
     grid-template-columns: repeat(3, 1fr);
   }
 
+  .articles__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .pillar-card--wide {
     grid-column: span 1;
   }
@@ -927,6 +1008,10 @@ h1, h2, h3, h4 {
 /* ≤ 480px */
 @media (max-width: 480px) {
   .pillars__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .articles__grid {
     grid-template-columns: 1fr;
   }
 
