@@ -820,6 +820,76 @@ h1, h2, h3, h4 {
 .newsletter__message--error   { color: var(--t1-orange); }
 
 /* ============================================================
+   QR SUBSCRIBE SECTION
+   ============================================================ */
+.qr-subscribe {
+  padding: 4rem 0;
+  background: var(--t1-surface);
+  border-top: 1px solid var(--t1-border);
+  border-bottom: 1px solid var(--t1-border);
+}
+
+.qr-subscribe__inner {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.qr-subscribe__content { flex: 1; }
+
+.qr-subscribe__img {
+  width: 200px;
+  height: 200px;
+  flex-shrink: 0;
+  display: block;
+}
+
+/* Newsletter section QR add-on */
+.newsletter__qr {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--t1-border);
+}
+
+.newsletter__qr-label {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--t1-gray);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  line-height: 1.7;
+}
+
+.newsletter__qr-img {
+  width: 110px;
+  height: 110px;
+  flex-shrink: 0;
+  display: block;
+}
+
+/* Footer QR */
+.footer__qr { margin-top: 1.25rem; }
+
+.footer__qr-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  color: var(--t1-orange);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.footer__qr img {
+  width: 80px;
+  height: 80px;
+  display: block;
+}
+
+/* ============================================================
    FOOTER
    ============================================================ */
 .footer {
@@ -983,6 +1053,12 @@ h1, h2, h3, h4 {
 
   .pillar-card--wide {
     grid-column: span 2;
+  }
+
+  .qr-subscribe__inner {
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
   }
 
   .newsletter__inner {
