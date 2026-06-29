@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111111">
+  <title>Content Incoming — Tier-1 Off-Grid</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .incoming {
+      min-height: calc(100vh - var(--header-h));
+      display: flex;
+      align-items: center;
+      padding: 6rem 0;
+      background-color: var(--t1-dark);
+      background-image:
+        linear-gradient(rgba(61, 61, 61, 0.22) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(61, 61, 61, 0.22) 1px, transparent 1px);
+      background-size: 50px 50px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .incoming__corner {
+      position: absolute;
+      width: 28px;
+      height: 28px;
+      border-color: var(--t1-orange);
+      border-style: solid;
+      opacity: 0.4;
+    }
+    .incoming__corner--tl { top: 2rem;    left: 2rem;   border-width: 2px 0 0 2px; }
+    .incoming__corner--tr { top: 2rem;    right: 2rem;  border-width: 2px 2px 0 0; }
+    .incoming__corner--bl { bottom: 2rem; left: 2rem;   border-width: 0 0 2px 2px; }
+    .incoming__corner--br { bottom: 2rem; right: 2rem;  border-width: 0 2px 2px 0; }
+
+    .incoming__heading {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      color: var(--t1-white);
+      line-height: 1.05;
+      margin-bottom: 1.25rem;
+      letter-spacing: 0.01em;
+    }
+
+    .incoming__heading span {
+      color: var(--t1-orange);
+    }
+
+    .incoming__body {
+      font-size: 1.05rem;
+      color: var(--t1-gray);
+      max-width: 520px;
+      line-height: 1.75;
+      margin-bottom: 2.5rem;
+    }
+
+    .incoming__cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .incoming__status {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--t1-border);
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      color: var(--t1-gray);
+      letter-spacing: 0.1em;
+    }
+
+    @media (max-width: 480px) {
+      .incoming__cta-group { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ======================================================
+       SITE HEADER
+       ====================================================== -->
+  <header class="site-header" id="siteHeader">
+
+    <div class="brand-bar">
+      <a href="/" class="brand-bar__logo-wrap">
+        <img src="/assets/logo.png" alt="Tier-1 Off-Grid" class="brand-bar__logo">
+        <div class="brand-bar__text">
+          <span class="brand-bar__wordmark">TIER-1 OFF-GRID</span>
+          <span class="brand-bar__tagline">Real tech for people serious about sovereignty.</span>
+        </div>
+      </a>
+      <div class="brand-bar__deco" aria-hidden="true">
+        <div class="brand-bar__bars">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <p class="brand-bar__status">// SYS:ONLINE // GRID:ACTIVE // COMMS:SECURE // ENC:ON // FREQ:CLEAR //</p>
+      </div>
+    </div>
+
+    <nav class="nav" id="nav">
+      <div class="nav__inner">
+        <ul class="nav__links" id="navLinks">
+          <li><a href="/pillars/power.html">POWER</a></li>
+          <li><a href="/pillars/comms.html">COMMS</a></li>
+          <li><a href="/pillars/security.html">SECURITY</a></li>
+          <li><a href="/pillars/privacy.html">PRIVACY</a></li>
+          <li><a href="/pillars/water-food.html">WATER &amp; FOOD</a></li>
+          <li><a href="/pillars/gear.html">GEAR</a></li>
+          <li><a href="/pillars/health.html">HEALTH</a></li>
+        </ul>
+        <a href="/newsletter/" class="btn btn--primary nav__cta">JOIN THE GRID</a>
+        <button class="nav__hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+  </header>
+
+  <!-- ======================================================
+       CONTENT INCOMING
+       ====================================================== -->
+  <section class="incoming">
+    <div class="incoming__corner incoming__corner--tl"></div>
+    <div class="incoming__corner incoming__corner--tr"></div>
+    <div class="incoming__corner incoming__corner--bl"></div>
+    <div class="incoming__corner incoming__corner--br"></div>
+
+    <div class="container">
+      <span class="eyebrow">STATUS // CONTENT INCOMING</span>
+      <h1 class="incoming__heading">This section is<br>being <span>built out.</span></h1>
+      <p class="incoming__body">We're putting this together now. Subscribe to the newsletter to get notified the moment it drops — or head back to home base and explore what's already live.</p>
+      <div class="incoming__cta-group">
+        <a href="/" class="btn btn--primary">BACK TO HOME BASE</a>
+        <a href="/articles/" class="btn btn--ghost">READ LIVE ARTICLES</a>
+      </div>
+      <p class="incoming__status">// TIER-1 OFF-GRID // OPERATIONAL // MORE CONTENT DEPLOYING SOON //</p>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       FOOTER
+       ====================================================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+
+      <div class="footer__brand">
+        <a href="/" class="footer__brand-link">
+          <img src="/assets/logo.png" alt="Tier-1 Off-Grid" class="footer__logo">
+          <span class="footer__wordmark">TIER-1 OFF-GRID</span>
+        </a>
+        <p class="footer__tagline">"Real tech for people serious about sovereignty."</p>
+      </div>
+
+      <nav class="footer__nav" aria-label="Footer navigation">
+        <div class="footer__col">
+          <h4 class="footer__col-heading">PILLARS</h4>
+          <ul>
+            <li><a href="/pillars/power.html">Power</a></li>
+            <li><a href="/pillars/comms.html">Comms</a></li>
+            <li><a href="/pillars/security.html">Security</a></li>
+            <li><a href="/pillars/privacy.html">Digital Privacy</a></li>
+            <li><a href="/pillars/water-food.html">Water &amp; Food</a></li>
+            <li><a href="/pillars/gear.html">Gear &amp; Tactics</a></li>
+            <li><a href="/pillars/health.html">Health Sovereignty</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-heading">PLATFORMS</h4>
+          <ul>
+            <li><a href="#" rel="noopener noreferrer">Substack</a></li>
+            <li><a href="#" rel="noopener noreferrer">Rumble</a></li>
+            <li><a href="#" rel="noopener noreferrer">Gab</a></li>
+            <li><a href="#" rel="noopener noreferrer">Odysee</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-heading">RESOURCES</h4>
+          <ul>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/articles/">Articles</a></li>
+            <li><a href="/gear/">Gear Reviews</a></li>
+            <li><a href="/newsletter/">Newsletter</a></li>
+          </ul>
+        </div>
+      </nav>
+
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container footer__bottom-inner">
+        <p class="footer__legal">&copy; 2026 Tier-1 Off-Grid. Some links on this site are affiliate links. We only recommend gear we'd use ourselves &mdash; your purchase helps fund this operation at no extra cost to you.</p>
+        <p class="footer__credit">Built with pure HTML/CSS/JS. No tracking. No Big Tech.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
