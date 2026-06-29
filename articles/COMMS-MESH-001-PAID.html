@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meshtastic — Full Build Protocol (Paid) | Tier-1 Off-Grid</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&family=Share+Tech+Mono&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://tier1offgrid.com/css/style.css">
+  <style>
+    :root {
+      --t1-black:   #111111;
+      --t1-dark:    #1A1A1A;
+      --t1-surface: #242424;
+      --t1-card:    #2D2D2D;
+      --t1-border:  #3D3D3D;
+      --t1-orange:  #C44A1A;
+      --t1-white:   #F0EDEA;
+      --t1-gray:    #888888;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--t1-black);
+      color: var(--t1-white);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    /* ── Nav ── */
+    .site-nav {
+      background: var(--t1-dark);
+      border-bottom: 1px solid var(--t1-border);
+      padding: 1rem 2rem;
+    }
+    .site-nav a {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--t1-white);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+    }
+    .site-nav a:hover { color: var(--t1-orange); }
+
+    /* ── Layout ── */
+    .article-wrap {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 5rem;
+    }
+
+    /* ── Article header ── */
+    .article-header {
+      border-left: 3px solid var(--t1-orange);
+      padding-left: 1.25rem;
+      margin-bottom: 2.5rem;
+    }
+    .pillar-eyebrow {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--t1-orange);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .article-header h1 {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      color: var(--t1-white);
+      line-height: 1.15;
+      margin-bottom: 0.5rem;
+    }
+    .article-date {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--t1-gray);
+      letter-spacing: 0.12em;
+    }
+
+    /* ── Content typography ── */
+    .article-content h2 {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: 1.65rem;
+      color: var(--t1-white);
+      margin: 2.75rem 0 1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--t1-border);
+    }
+    .article-content h3 {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--t1-orange);
+      margin: 2rem 0 0.75rem;
+    }
+    .article-content h4 {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--t1-gray);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin: 1.75rem 0 0.6rem;
+    }
+    .article-content p {
+      margin-bottom: 1.25rem;
+    }
+    .article-content strong {
+      color: var(--t1-white);
+      font-weight: 600;
+    }
+    .article-content em {
+      color: var(--t1-gray);
+      font-style: italic;
+    }
+    .article-content ul,
+    .article-content ol {
+      margin: 0.75rem 0 1.25rem 1.5rem;
+    }
+    .article-content li {
+      margin-bottom: 0.45rem;
+    }
+    .article-content hr {
+      border: none;
+      border-top: 1px solid var(--t1-border);
+      margin: 2.25rem 0;
+    }
+    .article-content a {
+      color: var(--t1-orange);
+      text-decoration: none;
+    }
+    .article-content a:hover { text-decoration: underline; }
+
+    /* ── Tables ── */
+    .article-content table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.75rem 0;
+      font-size: 0.9rem;
+    }
+    .article-content thead {
+      background: var(--t1-surface);
+      border-bottom: 2px solid var(--t1-orange);
+    }
+    .article-content th {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--t1-orange);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.75rem 1rem;
+      text-align: left;
+    }
+    .article-content td {
+      padding: 0.65rem 1rem;
+      border-bottom: 1px solid var(--t1-border);
+    }
+    .article-content tr:nth-child(even) td {
+      background: var(--t1-surface);
+    }
+
+    /* ── Cards / callout blocks ── */
+    .article-content blockquote {
+      background: var(--t1-card);
+      border-left: 3px solid var(--t1-orange);
+      padding: 1rem 1.25rem;
+      margin: 1.5rem 0;
+      color: var(--t1-gray);
+    }
+
+    /* ── Code ── */
+    .article-content code {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.85em;
+      background: var(--t1-surface);
+      color: var(--t1-orange);
+      padding: 0.15em 0.4em;
+      border: 1px solid var(--t1-border);
+    }
+    .article-content pre {
+      background: var(--t1-surface);
+      border-left: 3px solid var(--t1-orange);
+      padding: 1rem 1.25rem;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+    .article-content pre code {
+      background: none;
+      border: none;
+      padding: 0;
+      color: var(--t1-white);
+    }
+
+    /* ── Footer / back button ── */
+    .article-footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--t1-border);
+    }
+    .btn-back {
+      display: inline-block;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--t1-white);
+      background: var(--t1-surface);
+      text-decoration: none;
+      padding: 0.65rem 1.4rem;
+      clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-back:hover {
+      background: var(--t1-orange);
+      color: var(--t1-white);
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 600px) {
+      .article-wrap { padding: 1.5rem 1rem 3rem; }
+      .site-nav { padding: 0.75rem 1rem; }
+      .article-content table { font-size: 0.78rem; }
+      .article-content th,
+      .article-content td { padding: 0.5rem 0.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="/">Tier-1 Off-Grid</a>
+</nav>
+
+<div class="article-wrap">
+
+  <header class="article-header">
+    <span class="pillar-eyebrow">Comms / PILLAR-02</span>
+    <h1>Meshtastic — Full Build Protocol (Paid)</h1>
+    <time class="article-date">2026-06-28</time>
+  </header>
+
+  <div class="article-content">
+    <h2>Full Stockpile List</h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Cost</th>
+<th>Priority</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>LILYGO T-Beam x2 minimum</td>
+<td>$90</td>
+<td>Critical</td>
+</tr>
+<tr>
+<td>18650 batteries x6</td>
+<td>$20</td>
+<td>Critical</td>
+</tr>
+<tr>
+<td>Meshtastic firmware on USB</td>
+<td>$0</td>
+<td>Critical</td>
+</tr>
+<tr>
+<td>Baofeng UV-5R</td>
+<td>$25</td>
+<td>Critical</td>
+</tr>
+<tr>
+<td>Printed frequency card laminated</td>
+<td>$0</td>
+<td>Critical</td>
+</tr>
+<tr>
+<td>Printed Morse code chart laminated</td>
+<td>$0</td>
+<td>Critical</td>
+</tr>
+<tr>
+<td>Small 5V solar panel</td>
+<td>$20</td>
+<td>High</td>
+</tr>
+<tr>
+<td>Weatherproof project box</td>
+<td>$15</td>
+<td>High</td>
+</tr>
+<tr>
+<td>Coax cable and connectors</td>
+<td>$20</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>Elevated antenna mount</td>
+<td>$15</td>
+<td>Medium</td>
+</tr>
+</tbody></table>
+<p><strong>Total critical kit: under $135.</strong>
+<strong>Total complete kit: under $200.</strong></p>
+<p><em>No excuse. No waiting. Build it this weekend.</em></p>
+<hr>
+<h2>Final Word</h2>
+<p>The communication plan you make today is
+the one that works when everything else fails.
+The one you planned to make next month
+doesn&#39;t exist when you need it.</p>
+<p>Print the plan. Build the mesh.
+Brief your people.</p>
+<p><em>Questions on your specific setup? Reply
+to this email. Paid subscribers get
+direct access.</em></p>
+<p><em>— Tier-1 Off-Grid</em></p>
+<hr>
+
+  </div>
+
+  <footer class="article-footer">
+    <a href="/articles/" class="btn-back">← Back to Articles</a>
+  </footer>
+
+</div>
+
+</body>
+</html>

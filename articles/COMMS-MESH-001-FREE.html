@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meshtastic — The Off-Grid Comm Network | Tier-1 Off-Grid</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&family=Share+Tech+Mono&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://tier1offgrid.com/css/style.css">
+  <style>
+    :root {
+      --t1-black:   #111111;
+      --t1-dark:    #1A1A1A;
+      --t1-surface: #242424;
+      --t1-card:    #2D2D2D;
+      --t1-border:  #3D3D3D;
+      --t1-orange:  #C44A1A;
+      --t1-white:   #F0EDEA;
+      --t1-gray:    #888888;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--t1-black);
+      color: var(--t1-white);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    /* ── Nav ── */
+    .site-nav {
+      background: var(--t1-dark);
+      border-bottom: 1px solid var(--t1-border);
+      padding: 1rem 2rem;
+    }
+    .site-nav a {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--t1-white);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+    }
+    .site-nav a:hover { color: var(--t1-orange); }
+
+    /* ── Layout ── */
+    .article-wrap {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 5rem;
+    }
+
+    /* ── Article header ── */
+    .article-header {
+      border-left: 3px solid var(--t1-orange);
+      padding-left: 1.25rem;
+      margin-bottom: 2.5rem;
+    }
+    .pillar-eyebrow {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--t1-orange);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .article-header h1 {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      color: var(--t1-white);
+      line-height: 1.15;
+      margin-bottom: 0.5rem;
+    }
+    .article-date {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--t1-gray);
+      letter-spacing: 0.12em;
+    }
+
+    /* ── Content typography ── */
+    .article-content h2 {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: 1.65rem;
+      color: var(--t1-white);
+      margin: 2.75rem 0 1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--t1-border);
+    }
+    .article-content h3 {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--t1-orange);
+      margin: 2rem 0 0.75rem;
+    }
+    .article-content h4 {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--t1-gray);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin: 1.75rem 0 0.6rem;
+    }
+    .article-content p {
+      margin-bottom: 1.25rem;
+    }
+    .article-content strong {
+      color: var(--t1-white);
+      font-weight: 600;
+    }
+    .article-content em {
+      color: var(--t1-gray);
+      font-style: italic;
+    }
+    .article-content ul,
+    .article-content ol {
+      margin: 0.75rem 0 1.25rem 1.5rem;
+    }
+    .article-content li {
+      margin-bottom: 0.45rem;
+    }
+    .article-content hr {
+      border: none;
+      border-top: 1px solid var(--t1-border);
+      margin: 2.25rem 0;
+    }
+    .article-content a {
+      color: var(--t1-orange);
+      text-decoration: none;
+    }
+    .article-content a:hover { text-decoration: underline; }
+
+    /* ── Tables ── */
+    .article-content table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.75rem 0;
+      font-size: 0.9rem;
+    }
+    .article-content thead {
+      background: var(--t1-surface);
+      border-bottom: 2px solid var(--t1-orange);
+    }
+    .article-content th {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--t1-orange);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.75rem 1rem;
+      text-align: left;
+    }
+    .article-content td {
+      padding: 0.65rem 1rem;
+      border-bottom: 1px solid var(--t1-border);
+    }
+    .article-content tr:nth-child(even) td {
+      background: var(--t1-surface);
+    }
+
+    /* ── Cards / callout blocks ── */
+    .article-content blockquote {
+      background: var(--t1-card);
+      border-left: 3px solid var(--t1-orange);
+      padding: 1rem 1.25rem;
+      margin: 1.5rem 0;
+      color: var(--t1-gray);
+    }
+
+    /* ── Code ── */
+    .article-content code {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.85em;
+      background: var(--t1-surface);
+      color: var(--t1-orange);
+      padding: 0.15em 0.4em;
+      border: 1px solid var(--t1-border);
+    }
+    .article-content pre {
+      background: var(--t1-surface);
+      border-left: 3px solid var(--t1-orange);
+      padding: 1rem 1.25rem;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+    .article-content pre code {
+      background: none;
+      border: none;
+      padding: 0;
+      color: var(--t1-white);
+    }
+
+    /* ── Footer / back button ── */
+    .article-footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--t1-border);
+    }
+    .btn-back {
+      display: inline-block;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--t1-white);
+      background: var(--t1-surface);
+      text-decoration: none;
+      padding: 0.65rem 1.4rem;
+      clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-back:hover {
+      background: var(--t1-orange);
+      color: var(--t1-white);
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 600px) {
+      .article-wrap { padding: 1.5rem 1rem 3rem; }
+      .site-nav { padding: 0.75rem 1rem; }
+      .article-content table { font-size: 0.78rem; }
+      .article-content th,
+      .article-content td { padding: 0.5rem 0.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="/">Tier-1 Off-Grid</a>
+</nav>
+
+<div class="article-wrap">
+
+  <header class="article-header">
+    <span class="pillar-eyebrow">Comms / PILLAR-02</span>
+    <h1>Meshtastic — The Off-Grid Comm Network</h1>
+    <time class="article-date">2026-06-28</time>
+  </header>
+
+  <div class="article-content">
+    <p>They Can&#39;t Shut Down</p>
+<p><em>Tier-1 Off-Grid | Comms Pillar</em></p>
+<p>When the cell towers go down — whether it&#39;s
+a natural disaster, a grid failure, or something
+worse — your smartphone becomes a paperweight.
+The people who planned ahead will be talking.
+The people who didn&#39;t will be guessing.</p>
+<p>Meshtastic is one of the most important
+communication tools available to the
+liberty-minded American right now. It&#39;s open
+source, it&#39;s encrypted, it runs on cheap
+hardware, and it works with zero infrastructure.
+No towers. No internet. No carrier.
+No one to pull the plug.</p>
+<p>Let&#39;s break it down.</p>
+<hr>
+<h2>What Is Meshtastic?</h2>
+<p>Meshtastic is an open source project that turns
+low-cost LoRa radio devices into an encrypted,
+off-grid mesh communication network. Each device
+acts as both a sender and a repeater — every node
+in the network extends the range for every
+other node.</p>
+<p>You send a message from your device. It hops
+across every Meshtastic node in range until it
+reaches its destination. No central server.
+No internet required. No single point of failure.</p>
+<p>Think of it as a text messaging system that runs
+entirely on radio waves between devices
+your group controls.</p>
+<hr>
+<h2>Key Specs</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Range</td>
+<td>3–10 miles line of sight, further with repeaters</td>
+</tr>
+<tr>
+<td>Frequency</td>
+<td>915MHz (US legal, no license required for basic use)</td>
+</tr>
+<tr>
+<td>Encryption</td>
+<td>AES-256 — military grade</td>
+</tr>
+<tr>
+<td>Battery life</td>
+<td>Days to weeks depending on hardware</td>
+</tr>
+<tr>
+<td>Message type</td>
+<td>Text, location, telemetry</td>
+</tr>
+<tr>
+<td>Infrastructure needed</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Cost per node</td>
+<td>$30–$120 depending on hardware</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>What It&#39;s Good For</h2>
+<p>✔ <strong>Family and team comms</strong> — keep your group
+connected across a homestead, neighborhood,
+or bug-out route
+✔ <strong>Position tracking</strong> — see where your people
+are on a map with no cell signal
+✔ <strong>Neighborhood mesh</strong> — coordinate with trusted
+neighbors in a grid-down scenario
+✔ <strong>Completely private</strong> — no carrier logging
+your messages, no metadata harvested
+✔ <strong>Resilient</strong> — the more nodes in your network,
+the stronger it gets
+✔ <strong>No license required</strong> — for standard text
+messaging use at legal power levels</p>
+<hr>
+<h2>Limitations</h2>
+<p>✗ <strong>Not for voice</strong> — text and location only
+✗ <strong>Range drops in terrain</strong> — hills, buildings,
+and dense forest reduce effective range
+✗ <strong>Small network dependency</strong> — works best when
+multiple nodes are deployed
+✗ <strong>Not anonymous by default</strong> — requires proper
+configuration for OPSEC
+✗ <strong>Low bandwidth</strong> — not designed for images
+or large data</p>
+<hr>
+<h2>Gear Worth Knowing</h2>
+<p>The Meshtastic hardware ecosystem is currently
+dominated by Chinese manufacturers. There are
+no major American-made LoRa node options
+at this time. I&#39;ll be straight with you
+about that every time.</p>
+<p><strong>LILYGO T-Beam</strong> — the most popular starting
+point in the US prepper community. Onboard GPS,
+battery management, LoRa radio in one unit.
+Around $35–$45.</p>
+<p><strong>BridgeCom Systems</strong> (Lenexa, KS) — American
+company, veteran community trusted, primarily
+ham radio but worth watching as digital comms
+gear evolves. bridgecomsystems.com</p>
+<p><em>The Meshtastic software itself is American
+open source. Support the project at
+meshtastic.org.</em></p>
+<hr>
+<h2>The Full Build Is in the Paid Edition</h2>
+<p>The complete operational breakdown is behind
+the paywall. It includes:</p>
+<ul>
+<li>Full 3-node deployment protocol</li>
+<li>OPSEC hardening — step by step configuration</li>
+<li>Antenna elevation and repeater placement guide</li>
+<li>Frequency coordination with your group</li>
+<li>Tier 1 prepared build — complete parts list
+and setup walkthrough</li>
+<li>Tier 2 Day Zero — full fallback comms protocol,
+salvage hardware, analog backup, Morse code
+reference, and pre-arranged group
+communication plan template</li>
+</ul>
+<p>This is the content that actually gets your
+mesh network built, hardened, and operational.
+The overview is free. The operational detail
+is for people serious enough to pay for it.</p>
+<p><em>[Subscribe to access the full build protocol →]</em></p>
+<hr>
+<h2>The Mindset</h2>
+<p>Communication is command. The group that can
+talk is the group that can coordinate. The group
+that can coordinate is the group that survives
+and protects its own.</p>
+<p>Every dollar spent on centralized communication
+infrastructure is a dollar spent on a system
+someone else controls and can shut down. Your
+Meshtastic mesh is yours. Your frequencies
+are yours. Your encryption keys are yours.</p>
+<p>Build it before you need it. Because when you
+need it, it&#39;s too late to order from Amazon.</p>
+<p><em>— Tier-1 Off-Grid</em></p>
+<hr>
+<p><em>Next: Ham radio for preppers — why you need
+a license, how to get one fast, and what gear
+actually matters.</em></p>
+<p><em>Found this useful? Forward it to someone
+who needs to hear it. Not subscribed yet
+— fix that.</em></p>
+<hr>
+
+  </div>
+
+  <footer class="article-footer">
+    <a href="/articles/" class="btn-back">← Back to Articles</a>
+  </footer>
+
+</div>
+
+</body>
+</html>

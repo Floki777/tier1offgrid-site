@@ -634,6 +634,28 @@ h1, h2, h3, h4 {
   text-align: center;
 }
 
+.article-card--paid {
+  background: var(--t1-card);
+}
+
+.article-card--paid:hover {
+  background: #353535;
+}
+
+.article-card__status--paid {
+  color: var(--t1-white);
+  background: var(--t1-orange);
+  opacity: 1;
+}
+
+.article-card__lock {
+  width: 0.75em;
+  height: 0.75em;
+  vertical-align: -0.1em;
+  margin-right: 0.3em;
+  flex-shrink: 0;
+}
+
 /* ============================================================
    GEAR PREVIEW
    ============================================================ */
