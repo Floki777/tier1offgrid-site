@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy | Tier-1 Off-Grid</title>
+  <meta name="description" content="Privacy Policy for Tier 1 Dark 30 app and tier1offgrid.com. We collect nothing. Store nothing. Phone home to no one.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&family=Share+Tech+Mono&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://tier1offgrid.com/css/style.css">
+  <style>
+    :root {
+      --t1-black:   #111111;
+      --t1-dark:    #1A1A1A;
+      --t1-surface: #242424;
+      --t1-card:    #2D2D2D;
+      --t1-border:  #3D3D3D;
+      --t1-orange:  #C44A1A;
+      --t1-white:   #F0EDEA;
+      --t1-gray:    #888888;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--t1-black);
+      color: var(--t1-white);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    /* ── Nav ── */
+    .site-nav {
+      background: var(--t1-dark);
+      border-bottom: 1px solid var(--t1-border);
+      padding: 1rem 2rem;
+    }
+    .site-nav a {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--t1-white);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+    }
+    .site-nav a:hover { color: var(--t1-orange); }
+
+    /* ── Layout ── */
+    .article-wrap {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 5rem;
+    }
+
+    /* ── Article header ── */
+    .article-header {
+      border-left: 3px solid var(--t1-orange);
+      padding-left: 1.25rem;
+      margin-bottom: 2.5rem;
+    }
+    .pillar-eyebrow {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--t1-orange);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .article-header h1 {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      color: var(--t1-white);
+      line-height: 1.15;
+      margin-bottom: 0.5rem;
+    }
+    .article-date {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--t1-gray);
+      letter-spacing: 0.12em;
+    }
+
+    /* ── Content typography ── */
+    .article-content h2 {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: 1.65rem;
+      color: var(--t1-white);
+      margin: 2.75rem 0 1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--t1-border);
+    }
+    .article-content h3 {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--t1-orange);
+      margin: 2rem 0 0.75rem;
+    }
+    .article-content h4 {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--t1-gray);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin: 1.75rem 0 0.4rem;
+    }
+    .article-content p {
+      margin-bottom: 1.25rem;
+    }
+    .article-content strong {
+      color: var(--t1-white);
+      font-weight: 600;
+    }
+    .article-content em {
+      color: var(--t1-gray);
+      font-style: italic;
+    }
+    .article-content ul,
+    .article-content ol {
+      margin: 0.75rem 0 1.25rem 1.5rem;
+    }
+    .article-content li {
+      margin-bottom: 0.45rem;
+    }
+    .article-content hr {
+      border: none;
+      border-top: 1px solid var(--t1-border);
+      margin: 2.25rem 0;
+    }
+    .article-content a {
+      color: var(--t1-orange);
+      text-decoration: none;
+    }
+    .article-content a:hover { text-decoration: underline; }
+
+    /* ── Callout block ── */
+    .article-content blockquote {
+      background: var(--t1-card);
+      border-left: 3px solid var(--t1-orange);
+      padding: 1rem 1.25rem;
+      margin: 1.5rem 0;
+      color: var(--t1-gray);
+    }
+
+    /* ── Footer / back button ── */
+    .article-footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--t1-border);
+    }
+    .btn-back {
+      display: inline-block;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--t1-white);
+      background: var(--t1-surface);
+      text-decoration: none;
+      padding: 0.65rem 1.4rem;
+      clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-back:hover {
+      background: var(--t1-orange);
+      color: var(--t1-white);
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 600px) {
+      .article-wrap { padding: 1.5rem 1rem 3rem; }
+      .site-nav { padding: 0.75rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="/">Tier-1 Off-Grid</a>
+</nav>
+
+<div class="article-wrap">
+
+  <header class="article-header">
+    <span class="pillar-eyebrow">Legal / Privacy</span>
+    <h1>Privacy Policy</h1>
+    <time class="article-date">July 2026</time>
+  </header>
+
+  <div class="article-content">
+
+    <h2>The Short Version</h2>
+    <blockquote>
+      This app collects nothing. Stores nothing on any server. Phones home to no one. Your data stays on your device. Full stop.
+    </blockquote>
+
+    <hr>
+
+    <h2>The App — Tier 1 Dark 30</h2>
+
+    <h4>Data Collected</h4>
+    <p>None.</p>
+
+    <h4>Network Calls</h4>
+    <p>Zero. The app operates in full airplane mode. The only exception is the optional one-time download of offline topographic map tiles (MBTiles), which is user-initiated. No data is transmitted during this download beyond a standard HTTP request to retrieve the file.</p>
+
+    <h4>Analytics</h4>
+    <p>None. No Firebase, no Crashlytics, no third-party SDKs that report usage.</p>
+
+    <h4>Location</h4>
+    <p>The compass and topo map tools access on-device GPS. This data is used only on-device, in real time, for display purposes. It is never transmitted, never logged, never stored beyond the active session.</p>
+
+    <h4>Purchase Data</h4>
+    <p>One-time in-app purchases are processed entirely by Apple (App Store) or Google (Play Store). Tier 1 Dark 30 / Tier-1 Off-Grid receives no financial data, no card data, and no personal identifying information from these transactions beyond a confirmation that the purchase was completed.</p>
+
+    <h4>Encrypted Vault (When Built)</h4>
+    <p>All vault contents are encrypted on-device using AES-256. The key is derived from your PIN or biometric and never leaves your device. We have no access to vault contents. If you lose your PIN, the data is unrecoverable. There is no backdoor.</p>
+
+    <h4>Local Storage</h4>
+    <p>App preferences, premium status, gear loadout data, and resupply dates are stored in your device's local storage (<code>shared_preferences</code>). This data never leaves your device.</p>
+
+    <hr>
+
+    <h2>The Website — tier1offgrid.com</h2>
+    <p>This is a static site hosted on GitHub Pages. No login. No accounts. No cookies beyond what GitHub Pages sets by default for hosting. No tracking pixels. No ad networks. No analytics.</p>
+
+    <hr>
+
+    <h2>Third Parties</h2>
+    <p>Apple App Store and Google Play Store handle all payment processing under their own privacy policies. This policy does not govern their practices.</p>
+
+    <hr>
+
+    <h2>Children</h2>
+    <p>This app is not directed at children under 13 and does not knowingly collect information from anyone.</p>
+
+    <hr>
+
+    <h2>Changes</h2>
+    <p>If this policy changes, the updated version will be posted here with a new date. Given that we collect nothing, changes are unlikely.</p>
+
+    <hr>
+
+    <h2>Contact</h2>
+    <p>Questions: <a href="mailto:tier1offgrid@protonmail.com">tier1offgrid@protonmail.com</a></p>
+
+  </div>
+
+  <footer class="article-footer">
+    <a href="/" class="btn-back">← Back to Home</a>
+  </footer>
+
+</div>
+
+<script data-goatcounter="https://tier1offgrid.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
