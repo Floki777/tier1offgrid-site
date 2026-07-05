@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support | Tier-1 Off-Grid</title>
+  <meta name="description" content="Support for Tier 1 Dark 30 app and tier1offgrid.com. FAQs, contact, and help for app purchases, content access, and the newsletter.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&family=Share+Tech+Mono&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --t1-black:   #111111;
+      --t1-dark:    #1A1A1A;
+      --t1-surface: #242424;
+      --t1-card:    #2D2D2D;
+      --t1-border:  #3D3D3D;
+      --t1-orange:  #C44A1A;
+      --t1-white:   #F0EDEA;
+      --t1-gray:    #888888;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--t1-black);
+      color: var(--t1-white);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    /* ── Nav ── */
+    .site-nav {
+      background: var(--t1-dark);
+      border-bottom: 1px solid var(--t1-border);
+      padding: 1rem 2rem;
+    }
+    .site-nav a {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--t1-white);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+    }
+    .site-nav a:hover { color: var(--t1-orange); }
+
+    /* ── Layout ── */
+    .article-wrap {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 5rem;
+    }
+
+    /* ── Article header ── */
+    .article-header {
+      border-left: 3px solid var(--t1-orange);
+      padding-left: 1.25rem;
+      margin-bottom: 2.5rem;
+    }
+    .pillar-eyebrow {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--t1-orange);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .article-header h1 {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      color: var(--t1-white);
+      line-height: 1.15;
+      margin-bottom: 0.5rem;
+    }
+    .article-date {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--t1-gray);
+      letter-spacing: 0.12em;
+    }
+
+    /* ── Content typography ── */
+    .article-content h2 {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: 1.65rem;
+      color: var(--t1-white);
+      margin: 2.75rem 0 1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--t1-border);
+    }
+    .article-content h3 {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--t1-orange);
+      margin: 1.75rem 0 0.5rem;
+    }
+    .article-content p {
+      margin-bottom: 1.25rem;
+      color: var(--t1-gray);
+    }
+    .article-content p strong {
+      color: var(--t1-white);
+      font-weight: 600;
+    }
+    .article-content a {
+      color: var(--t1-orange);
+      text-decoration: none;
+    }
+    .article-content a:hover { text-decoration: underline; }
+    .article-content hr {
+      border: none;
+      border-top: 1px solid var(--t1-border);
+      margin: 2.25rem 0;
+    }
+
+    /* ── Contact callout ── */
+    .article-content blockquote {
+      background: var(--t1-card);
+      border-left: 3px solid var(--t1-orange);
+      padding: 1.1rem 1.25rem;
+      margin: 0 0 1.5rem;
+    }
+    .article-content blockquote p {
+      margin: 0;
+      color: var(--t1-white);
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+    }
+    .article-content blockquote a {
+      color: var(--t1-orange);
+    }
+
+    /* ── FAQ items ── */
+    .faq-item {
+      border-bottom: 1px solid var(--t1-border);
+      padding: 1.1rem 0;
+    }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--t1-white);
+      margin-bottom: 0.4rem;
+    }
+    .faq-a {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.93rem;
+      color: var(--t1-gray);
+      line-height: 1.7;
+      margin: 0;
+    }
+    .faq-a a { color: var(--t1-orange); text-decoration: none; }
+    .faq-a a:hover { text-decoration: underline; }
+
+    /* ── Footer / back button ── */
+    .article-footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--t1-border);
+    }
+    .btn-back {
+      display: inline-block;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--t1-white);
+      background: var(--t1-surface);
+      text-decoration: none;
+      padding: 0.65rem 1.4rem;
+      clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-back:hover { background: var(--t1-orange); color: var(--t1-white); }
+
+    /* ── Copyright ── */
+    .site-copyright {
+      text-align: center;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--t1-gray);
+      letter-spacing: 0.08em;
+      padding: 1.5rem 1rem;
+      border-top: 1px solid var(--t1-border);
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 600px) {
+      .article-wrap { padding: 1.5rem 1rem 3rem; }
+      .site-nav { padding: 0.75rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="/">Tier-1 Off-Grid</a>
+</nav>
+
+<div class="article-wrap">
+
+  <header class="article-header">
+    <span class="pillar-eyebrow">Support // Tier-1 Off-Grid</span>
+    <h1>Support</h1>
+    <time class="article-date">July 2026</time>
+  </header>
+
+  <div class="article-content">
+
+    <blockquote>
+      <p>Email: <a href="mailto:tier1offgrid@protonmail.com">tier1offgrid@protonmail.com</a> &nbsp;// &nbsp;Response within 48 hours. ProtonMail preferred.</p>
+    </blockquote>
+
+    <!-- ══════════════════════════════
+         APP SUPPORT
+    ══════════════════════════════ -->
+    <h2>TIER 1 DARK 30 — APP</h2>
+
+    <div class="faq-item">
+      <p class="faq-q">How do I unlock the full app?</p>
+      <p class="faq-a">Tap <strong>Unlock Full Access</strong> inside the app. You'll be taken to a standard in-app purchase through the App Store (iOS) or Google Play (Android). One-time payment — no subscription, no recurring charges.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">I already paid. How do I restore my purchase on a new device?</p>
+      <p class="faq-a">Open the app, go to Settings, and tap <strong>Restore Purchase</strong>. Your purchase is tied to your Apple ID or Google account — as long as you're signed into the same account, it restores for free on any device.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">Does the app work without internet?</p>
+      <p class="faq-a">Yes. Fully offline. Once downloaded, the app operates in complete airplane mode. No network connection is ever required to use any feature.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">Where is my data stored?</p>
+      <p class="faq-a">On your device only. The app stores gear loadouts, resupply dates, and settings in local device storage. Nothing is transmitted, synced, or backed up to any server. If you delete the app, that local data is gone — there is no cloud backup by design.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">How do I update the app?</p>
+      <p class="faq-a">Updates come through the App Store or Google Play the same as any other app. Enable automatic updates or check manually. All content updates are included at no charge.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">The app is crashing or not loading correctly.</p>
+      <p class="faq-a">Force-close the app completely and reopen it. If the problem persists, delete and reinstall — your purchase will restore through the store at no charge. If you're still having issues, email us with your device model and iOS/Android version.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">When is the Android / Google Play version available?</p>
+      <p class="faq-a">It's in development. Subscribe to the newsletter at <a href="https://tier1offgrid.substack.com" target="_blank" rel="noopener noreferrer">tier1offgrid.substack.com</a> and we'll notify you the day it drops.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">I need a refund.</p>
+      <p class="faq-a">Refunds on in-app purchases are handled by Apple and Google directly — not by us. For iOS: go to <strong>reportaproblem.apple.com</strong>. For Android: visit the Google Play Help Center. If you're having a technical issue we can fix, email us first.</p>
+    </div>
+
+    <hr>
+
+    <!-- ══════════════════════════════
+         WEBSITE SUPPORT
+    ══════════════════════════════ -->
+    <h2>TIER1OFFGRID.COM — WEBSITE</h2>
+
+    <div class="faq-item">
+      <p class="faq-q">How do I subscribe to the newsletter?</p>
+      <p class="faq-a">Go to <a href="https://tier1offgrid.substack.com" target="_blank" rel="noopener noreferrer">tier1offgrid.substack.com</a> or use the signup form on the homepage. Free tier is available. Paid tier ($10–15/month) unlocks full deep-dive content and paid articles.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">How do I access paid articles?</p>
+      <p class="faq-a">Paid content is delivered through Substack. Subscribe at the paid tier and you'll receive full access via your Substack account. Articles marked <strong>SUBSCRIBERS ONLY</strong> on this site link directly to Substack.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">Are the gear links on this site affiliate links?</p>
+      <p class="faq-a">Yes. Some links are affiliate links — if you buy through them, we earn a commission at no extra cost to you. We only link gear we've personally researched or would use. The affiliate relationship is disclosed on every page that contains affiliate links.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">I found a broken link or an error on the site.</p>
+      <p class="faq-a">Email us at <a href="mailto:tier1offgrid@protonmail.com">tier1offgrid@protonmail.com</a> with the page URL and what's broken. We'll fix it.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">How do I cancel my newsletter subscription?</p>
+      <p class="faq-a">Log into your Substack account and manage your subscription from there. You can cancel or downgrade any time — Substack handles all billing. We have no access to your payment info.</p>
+    </div>
+
+    <hr>
+
+    <!-- ══════════════════════════════
+         CONTACT
+    ══════════════════════════════ -->
+    <h2>CONTACT</h2>
+
+    <p><strong>Email:</strong> <a href="mailto:tier1offgrid@protonmail.com">tier1offgrid@protonmail.com</a></p>
+    <p>We respond within 48 hours, usually faster. ProtonMail is preferred — it's encrypted end-to-end. If you're emailing from Gmail, that's fine, just know it's not private on your end.</p>
+    <p>We don't have a phone line, a support chat widget, or a ticket system. Just email. Real reply, real person.</p>
+
+  </div>
+
+  <footer class="article-footer">
+    <a href="/" class="btn-back">← Back to Home</a>
+  </footer>
+
+</div>
+
+<footer class="site-copyright">&copy; 2026 Tier-1 Off-Grid | John D. Branch. All rights reserved.</footer>
+
+<script data-goatcounter="https://tier1offgrid.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
