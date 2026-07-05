@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Operator Manual — Tier 1 Dark 30 | Tier-1 Off-Grid</title>
+  <meta name="description" content="Complete operator manual for Tier 1 Dark 30. Navigation, features, tools, signal suite, and troubleshooting.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&family=Share+Tech+Mono&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --t1-black:      #111111;
+      --t1-dark:       #1A1A1A;
+      --t1-surface:    #242424;
+      --t1-card:       #2D2D2D;
+      --t1-border:     #3D3D3D;
+      --t1-orange:     #C44A1A;
+      --t1-white:      #F0EDEA;
+      --t1-gray:       #888888;
+      --t1-gray-light: #AAAAAA;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--t1-black);
+      color: var(--t1-white);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    /* ── Nav ── */
+    .site-nav {
+      background: var(--t1-dark);
+      border-bottom: 1px solid var(--t1-border);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .site-nav a {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--t1-white);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+    }
+    .site-nav a:hover { color: var(--t1-orange); }
+    .site-nav__back {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--t1-gray);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+    .site-nav__back:hover { color: var(--t1-orange); }
+
+    /* ── Layout ── */
+    .article-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 6rem;
+    }
+
+    /* ── Article header ── */
+    .article-header {
+      border-left: 3px solid var(--t1-orange);
+      padding-left: 1.25rem;
+      margin-bottom: 3rem;
+    }
+    .pillar-eyebrow {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--t1-orange);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .article-header h1 {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      color: var(--t1-white);
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+    }
+    .article-date {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--t1-gray);
+      letter-spacing: 0.12em;
+    }
+
+    /* ── Section headers ── */
+    .manual-section {
+      margin-bottom: 3.5rem;
+    }
+    .manual-section h2 {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: clamp(1.25rem, 3vw, 1.6rem);
+      color: var(--t1-white);
+      letter-spacing: 0.02em;
+      padding: 0.6rem 0 0.6rem 1rem;
+      border-left: 3px solid var(--t1-orange);
+      border-bottom: 1px solid var(--t1-border);
+      margin-bottom: 1.5rem;
+    }
+    .manual-section h3 {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--t1-orange);
+      letter-spacing: 0.04em;
+      margin: 1.75rem 0 0.5rem;
+    }
+    .manual-section h4 {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--t1-gray);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin: 1.5rem 0 0.5rem;
+    }
+    .manual-section p {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      color: var(--t1-gray);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+    .manual-section p strong {
+      color: var(--t1-white);
+      font-weight: 600;
+    }
+    .manual-section a {
+      color: var(--t1-orange);
+      text-decoration: none;
+    }
+    .manual-section a:hover { text-decoration: underline; }
+
+    /* ── Lists ── */
+    .manual-section ol,
+    .manual-section ul {
+      margin: 0.75rem 0 1.25rem 1.5rem;
+    }
+    .manual-section li {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.93rem;
+      color: var(--t1-gray);
+      line-height: 1.75;
+      margin-bottom: 0.35rem;
+    }
+    .manual-section li strong { color: var(--t1-white); font-weight: 600; }
+
+    /* ── Tables ── */
+    .manual-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.25rem 0 1.75rem;
+      font-size: 0.88rem;
+    }
+    .manual-section thead {
+      background: var(--t1-surface);
+      border-bottom: 2px solid var(--t1-orange);
+    }
+    .manual-section th {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--t1-orange);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.75rem 1rem;
+      text-align: left;
+    }
+    .manual-section td {
+      padding: 0.65rem 1rem;
+      border-bottom: 1px solid var(--t1-border);
+      color: var(--t1-gray);
+      vertical-align: top;
+    }
+    .manual-section tr:nth-child(even) td { background: var(--t1-surface); }
+    .manual-section td strong { color: var(--t1-white); font-weight: 600; }
+
+    /* ── Callout / note blocks ── */
+    .note-block {
+      background: var(--t1-card);
+      border-left: 3px solid var(--t1-orange);
+      padding: 1rem 1.25rem;
+      margin: 1.25rem 0;
+    }
+    .note-block p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+
+    /* ── Skill category cards ── */
+    .skill-cat {
+      border-bottom: 1px solid var(--t1-border);
+      padding: 0.9rem 0;
+    }
+    .skill-cat:last-child { border-bottom: none; }
+    .skill-cat__name {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--t1-white);
+      margin-bottom: 0.25rem;
+    }
+    .skill-cat__name span {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--t1-orange);
+      letter-spacing: 0.1em;
+      margin-left: 0.5rem;
+    }
+    .skill-cat__modules {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      color: var(--t1-gray);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* ── Signal tab labels ── */
+    .signal-tab {
+      margin: 1.5rem 0 0.75rem;
+      display: inline-block;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      color: var(--t1-orange);
+      background: var(--t1-surface);
+      padding: 0.25rem 0.6rem;
+      border: 1px solid var(--t1-border);
+      text-transform: uppercase;
+    }
+
+    /* ── Tool sections ── */
+    .tool-block {
+      background: var(--t1-card);
+      border: 1px solid var(--t1-border);
+      border-top: 2px solid var(--t1-orange);
+      border-radius: 4px;
+      padding: 1.25rem 1.25rem 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .tool-block h3 {
+      margin-top: 0;
+      margin-bottom: 0.75rem;
+    }
+    .tool-block p { margin-bottom: 0.65rem; }
+    .tool-block p:last-child { margin-bottom: 0; }
+
+    /* ── Troubleshoot items ── */
+    .trouble-item {
+      border-bottom: 1px solid var(--t1-border);
+      padding: 1.1rem 0;
+    }
+    .trouble-item:last-child { border-bottom: none; }
+    .trouble-q {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--t1-white);
+      margin-bottom: 0.4rem;
+    }
+    .trouble-a {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      color: var(--t1-gray);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* ── Print button ── */
+    .print-btn {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--t1-orange);
+      color: var(--t1-white);
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border: none;
+      padding: 0.75rem 1.25rem;
+      clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      z-index: 100;
+      transition: background 0.2s;
+    }
+    .print-btn:hover { background: #a83d15; }
+    .print-btn svg { flex-shrink: 0; }
+
+    /* ── Footer ── */
+    .page-footer {
+      background: var(--t1-dark);
+      border-top: 1px solid var(--t1-border);
+      padding: 3rem 0 2.5rem;
+    }
+    .container { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+    .footer-brand {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--t1-white);
+      letter-spacing: 0.06em;
+      display: block;
+      margin-bottom: 0.35rem;
+    }
+    .footer-tagline {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      color: var(--t1-gray);
+    }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem 0.4rem;
+      align-items: center;
+      justify-content: center;
+    }
+    .footer-links a {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.83rem;
+      color: var(--t1-gray);
+      text-decoration: none;
+    }
+    .footer-links a:hover { color: var(--t1-orange); }
+    .footer-links .pipe { color: var(--t1-border); font-size: 0.75rem; }
+    .footer-copyright {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.67rem;
+      color: var(--t1-gray);
+      letter-spacing: 0.06em;
+      text-align: right;
+      line-height: 1.7;
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 768px) {
+      .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .footer-links { justify-content: flex-start; }
+      .footer-copyright { text-align: left; }
+      .print-btn { bottom: 1.25rem; right: 1.25rem; font-size: 0.75rem; padding: 0.65rem 1rem; }
+    }
+    @media (max-width: 600px) {
+      .article-wrap { padding: 1.5rem 1rem 5rem; }
+      .site-nav { padding: 0.75rem 1rem; }
+      .manual-section table { font-size: 0.78rem; }
+      .manual-section th, .manual-section td { padding: 0.5rem 0.6rem; }
+    }
+
+    /* ── Print CSS ── */
+    @media print {
+      * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      body { background: #fff; color: #111; font-size: 11pt; line-height: 1.6; }
+      .site-nav, .print-btn, .page-footer { display: none !important; }
+      .article-wrap { max-width: 100%; padding: 0.5rem; }
+      .article-header { border-left: 3px solid #C44A1A; }
+      .article-header h1 { color: #111; }
+      .pillar-eyebrow { color: #C44A1A; }
+      .article-date { color: #555; }
+      .manual-section h2 { color: #111; border-left: 3px solid #C44A1A; border-bottom: 1px solid #ccc; page-break-after: avoid; }
+      .manual-section h3 { color: #C44A1A; page-break-after: avoid; }
+      .manual-section h4 { color: #555; page-break-after: avoid; }
+      .manual-section p, .manual-section li, .trouble-a, .skill-cat__modules { color: #333; }
+      .manual-section p strong, .manual-section li strong, .trouble-q, .skill-cat__name { color: #111; }
+      .manual-section thead { background: #f0f0f0; }
+      .manual-section th { color: #C44A1A; }
+      .manual-section td { color: #333; border-bottom: 1px solid #ddd; }
+      .manual-section tr:nth-child(even) td { background: #f8f8f8; }
+      .note-block { background: #f5f5f5; border-left: 3px solid #C44A1A; }
+      .note-block p { color: #333; }
+      .tool-block { background: #f5f5f5; border: 1px solid #ddd; border-top: 2px solid #C44A1A; }
+      .signal-tab { background: #eee; border: 1px solid #ccc; color: #C44A1A; }
+      .skill-cat__name span { color: #C44A1A; }
+      .manual-section a { color: #C44A1A; }
+      .manual-section { page-break-inside: avoid; }
+      table { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Nav ── -->
+<nav class="site-nav">
+  <a href="/">Tier-1 Off-Grid</a>
+  <a href="/dist/dark30.html" class="site-nav__back">← Dark 30 App Page</a>
+</nav>
+
+<div class="article-wrap">
+
+  <!-- ── Header ── -->
+  <header class="article-header">
+    <span class="pillar-eyebrow">Documentation / Operator Manual</span>
+    <h1>Tier 1 Dark 30 — Operator Manual</h1>
+    <time class="article-date">July 2026</time>
+  </header>
+
+  <!-- ════════════════════════════════════════
+       SECTION 1 — WHAT THIS APP IS
+  ════════════════════════════════════════ -->
+  <div class="manual-section" id="s1">
+    <h2>SECTION 1 — WHAT THIS APP IS</h2>
+    <p>Tier 1 Dark 30 is a survival and preparedness training app built for sustained grid-down scenarios. It is not a reference wiki, not a gear catalog, and not a beginner camping guide. Every module is written to operator standard — meaning it assumes the situation is real, resources are limited, and someone is depending on you to know what you are doing.</p>
+    <p>The app works fully offline. No internet connection is required for any feature. No account is required. Nothing is transmitted. Everything lives on your device.</p>
+  </div>
+
+  <!-- ════════════════════════════════════════
+       SECTION 2 — NAVIGATION OVERVIEW
+  ════════════════════════════════════════ -->
+  <div class="manual-section" id="s2">
+    <h2>SECTION 2 — NAVIGATION OVERVIEW</h2>
+    <p>The home screen has 7 sections. Tap any tile to enter that section.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Section</th>
+          <th>What It Does</th>
+          <th>Start Here If</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Situation</strong></td>
+          <td>8-question assessment engine that generates a prioritized action plan</td>
+          <td>You don't know where to start</td>
+        </tr>
+        <tr>
+          <td><strong>Scenarios</strong></td>
+          <td>83 operational playbooks across 8 threat categories</td>
+          <td>You need a full picture of a specific threat</td>
+        </tr>
+        <tr>
+          <td><strong>Skills</strong></td>
+          <td>114 training modules across 14 categories</td>
+          <td>You need to learn or reference a specific skill</td>
+        </tr>
+        <tr>
+          <td><strong>Mindset</strong></td>
+          <td>7 modules on operator psychology and decision-making</td>
+          <td>You need to understand how to think under pressure</td>
+        </tr>
+        <tr>
+          <td><strong>Tools</strong></td>
+          <td>Live calculators and planners</td>
+          <td>You need to calculate water needs, plan comms, build a loadout</td>
+        </tr>
+        <tr>
+          <td><strong>Reference</strong></td>
+          <td>21 quick-access field reference cards</td>
+          <td>You need fast information on a specific topic</td>
+        </tr>
+        <tr>
+          <td><strong>My Plan</strong></td>
+          <td>Personalized operator profile (coming soon)</td>
+          <td>Post-launch feature</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ════════════════════════════════════════
+       SECTION 3 — FREE VS PREMIUM CONTENT
+  ════════════════════════════════════════ -->
+  <div class="manual-section" id="s3">
+    <h2>SECTION 3 — FREE VS PREMIUM CONTENT</h2>
+    <p>The app has a free tier and a paid tier. One-time purchase of <strong>$24.99</strong> unlocks everything permanently.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>What's Free</th>
+          <th>What's Paid ($24.99 one time)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>First 2 skill modules per category</td>
+          <td>All remaining skill modules (100+)</td>
+        </tr>
+        <tr>
+          <td>First scenario per threat category</td>
+          <td>All remaining scenario modules (75+)</td>
+        </tr>
+        <tr>
+          <td>All 21 reference cards</td>
+          <td>Unlimited Situation Assessments</td>
+        </tr>
+        <tr>
+          <td>Signal Suite (fully free)</td>
+          <td>All tools — Water/Food Calculator, Comms Planner, Gear Loadout Builder, Compass</td>
+        </tr>
+        <tr>
+          <td>3 Situation Assessments</td>
+          <td>Operator Briefing screen</td>
+        </tr>
+        <tr>
+          <td>Mindset modules</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+    <p>To unlock: tap any locked item and follow the prompt. Or go to <strong>Settings</strong> and tap <strong>Unlock Full Access</strong>.</p>
+  </div>
+
+  <!-- ════════════════════════════════════════
+       SECTION 4 — SITUATION ASSESSMENT ENGINE
+  ════════════════════════════════════════ -->
+  <div class="manual-section" id="s4">
+    <h2>SECTION 4 — SITUATION ASSESSMENT ENGINE</h2>
+    <p>The Situation Assessment Engine is the fastest path to a prioritized action plan when you don't know where to start.</p>
+    <h3>How to use it</h3>
+    <ol>
+      <li>Tap <strong>Situation</strong> on the home screen</li>
+      <li>Answer 8 questions — threat type, location, group composition, supply status, infrastructure status, immediate danger level, medical status, and time elapsed since the event</li>
+      <li>Review your result — threat level (Green / Yellow / Orange / Red), immediate actions, 72-hour priorities, and linked modules relevant to your situation</li>
+      <li>Tap any linked module to go directly to relevant content</li>
+      <li>Tap <strong>Re-Assess</strong> at any time to run a new assessment as your situation changes</li>
+    </ol>
+    <div class="note-block">
+      <p>Free users get 3 assessments. Premium users get unlimited.</p>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════
+       SECTION 5 — SCENARIOS
+  ════════════════════════════════════════ -->
+  <div class="manual-section" id="s5">
+    <h2>SECTION 5 — SCENARIOS</h2>
+    <p>83 scenario modules organized into 8 threat categories:</p>
+    <ul>
+      <li>Grid and Infrastructure Collapse <strong>(8 modules)</strong></li>
+      <li>Civil Unrest <strong>(10 modules)</strong></li>
+      <li>Government Breakdown <strong>(10 modules)</strong></li>
+      <li>Invasion and Occupation <strong>(10 modules)</strong></li>
+      <li>Nuclear and Radiological <strong>(12 modules)</strong></li>
+      <li>Biological and Pandemic <strong>(11 modules)</strong></li>
+      <li>Chemical and EMP <strong>(11 modules)</strong></li>
+      <li>Natural Disaster <strong>(11 modules)</strong></li>
+    </ul>
+    <h3>How to navigate</h3>
+    <ol>
+      <li>Tap <strong>Scenarios</strong> on the home screen</li>
+      <li>Select a threat category</li>
+      <li>Select a specific scenario</li>
+      <li>Read the full module — immediate actions, 72-hour plan, extended strategy, community response</li>
+    </ol>
+    <p>Each module is a complete operational playbook. Read the ones relevant to your threat environment before you need them. The time to read a nuclear scenario playbook is not after the flash.</p>
+  </div>
+
+  <!-- ════════════════════════════════════════
+       SECTION 6 — SKILLS
+  ════════════════════════════════════════ -->
+  <div class="manual-section" id="s6">
+    <h2>SECTION 6 — SKILLS</h2>
+    <p>114 skill modules across 14 categories. Each module is written to operator standard with standard operating procedures, time benchmarks, degraded condition notes, and an Operator Notes section covering the most critical insight for that skill.</p>
+
+    <h3>Categories</h3>
+
+    <div class="skill-cat">
+      <p class="skill-cat__name">Fire <span>14 MODULES</span></p>
+      <p class="skill-cat__modules">Bow drill, hand drill, flint and steel, battery and steel wool, magnification, chemical methods, wet conditions, fire lays, signal fire, cooking fire, warmth fire, fire safety, banking, and more.</p>
+    </div>
+    <div class="skill-cat">
+      <p class="skill-cat__name">Shelter <span>14 MODULES</span></p>
+      <p class="skill-cat__modules">Debris hut, lean-to, A-frame, snow shelter, urban shelter, vehicle shelter, tarp and poncho configurations, underground, insulation, raised platform, desert, and swamp shelter.</p>
+    </div>
+    <div class="skill-cat">
+      <p class="skill-cat__name">Water <span>15 MODULES</span></p>
+      <p class="skill-cat__modules">Terrain sourcing, urban sourcing, solar still, natural and urban filtration, boiling, collection, chemical treatment, plant sources, storage, dehydration recognition, and more.</p>
+    </div>
+    <div class="skill-cat">
+      <p class="skill-cat__name">Medical and Trauma <span>12 MODULES</span></p>
+      <p class="skill-cat__modules">Hemorrhage control, airway management, chest wounds, fractures, burns, hypothermia, infection, heat illness, TCCC, MARCH protocol, dental emergencies, survival pharmacy.</p>
+    </div>
+    <div class="skill-cat">
+      <p class="skill-cat__name">Navigation <span>10 MODULES</span></p>
+      <p class="skill-cat__modules">Compass, map reading, celestial navigation, terrain association, urban navigation, route planning, dead reckoning, water navigation, grid coordinates, night navigation.</p>
+    </div>
+    <div class="skill-cat">
+      <p class="skill-cat__name">Food <span>7 MODULES</span></p>
+      <p class="skill-cat__modules">Fishing, cooking, trapping, nutrition and caloric needs, foraging basics.</p>
+    </div>
+    <div class="skill-cat">
+      <p class="skill-cat__name">Communications <span>6 MODULES</span></p>
+      <p class="skill-cat__modules">Radio fundamentals, COMSEC and signal discipline, visual signaling, Meshtastic mesh networking, net operations, runner systems.</p>
+    </div>
+    <div class="skill-cat">
+      <p class="skill-cat__name">Security and Home Defense <span>5 MODULES</span></p>
+      <p class="skill-cat__modules">Home defense, access control and checkpoints, watch rotation, reaction to contact, immediate action drills.</p>
+    </div>
+    <div class="skill-cat">
+      <p class="skill-cat__name">Intelligence <span>4 MODULES</span></p>
+      <p class="skill-cat__modules">Area assessment, pattern of life, neighborhood intelligence network, threat analysis.</p>
+    </div>
+    <div class="skill-cat">
+      <p class="skill-cat__name">Movement and Patrol <span>6 MODULES</span></p>
+      <p class="skill-cat__modules">Patrol fundamentals, urban movement, cover and concealment, evasion and escape, vehicle operations, advanced patrol.</p>
+    </div>
+    <div class="skill-cat">
+      <p class="skill-cat__name">Primitive Weapons and Defense <span>9 MODULES</span></p>
+      <p class="skill-cat__modules">Bow and arrow, sling, spear, knapping, club, traps, edged weapons, atlatl, staff.</p>
+    </div>
+    <div class="skill-cat">
+      <p class="skill-cat__name">Improvised Tools <span>4 MODULES</span></p>
+      <p class="skill-cat__modules">Basic cordage, primitive pottery, primitive metalworking, advanced rope making.</p>
+    </div>
+    <div class="skill-cat">
+      <p class="skill-cat__name">Situational Awareness <span>4 MODULES</span></p>
+      <p class="skill-cat__modules">Color code system, threat assessment, pattern of life analysis, counter-surveillance.</p>
+    </div>
+    <div class="skill-cat">
+      <p class="skill-cat__name">Community Organization <span>4 MODULES</span></p>
+      <p class="skill-cat__modules">Community structure and governance, barter and trade economy, community resistance, food production at scale.</p>
+    </div>
+
+    <h3>How to use</h3>
+    <ol>
+      <li>Tap <strong>Skills</strong> on the home screen</li>
+      <li>Select a category</li>
+      <li>Select a module</li>
+      <li>Read the full content — use the font size toggle (<strong>Aa</strong>) to adjust for your conditions</li>
+      <li>Use PDF export to save a module for offline reference outside the app</li>
+    </ol>
+  </div>
+
+  <!-- ════════════════════════════════════════
+       SECTION 7 — SIGNAL SUITE
+  ════════════════════════════════════════ -->
+  <div class="manual-section" id="s7">
+    <h2>SECTION 7 — SIGNAL SUITE</h2>
+    <p>The Signal Suite is a fully functional communications toolkit accessible from within the Skills section under Communications. Five tabs.</p>
+
+    <span class="signal-tab">FLASHER</span>
+    <p>Type any message. The app converts it to Morse code and flashes your phone LED in the correct dot-dash sequence. Adjust speed with the WPM slider. Use this to signal aircraft, distant observers, or any party who can see your phone.</p>
+
+    <span class="signal-tab">DECODER</span>
+    <p>Tap the large button to input Morse manually. Short tap equals dot. Long tap equals dash. The app detects letter gaps and word gaps automatically and displays the decoded text in real time.</p>
+
+    <span class="signal-tab">SOUND SIGNALS</span>
+    <p>Plays standard survival sound signal sequences. Three blasts for distress. Two blasts for all clear. One blast for attention. SOS in Morse by audio. Each has a play button and displays the international standard meaning.</p>
+
+    <span class="signal-tab">VISUAL REFERENCE</span>
+    <p>Complete ground-to-air signal reference. International symbols (V, X, arrow, LL, F), body signals to aircraft, panel signal colors and placement, day and night signaling methods, mirror flash technique.</p>
+
+    <span class="signal-tab">SIGNAL DISCIPLINE</span>
+    <p>Full COMSEC and communications security guide covering brevity codes, authentication, duress signals, frequency discipline, and transmission minimization.</p>
+  </div>
+
+  <!-- ════════════════════════════════════════
+       SECTION 8 — TOOLS
+  ════════════════════════════════════════ -->
+  <div class="manual-section" id="s8">
+    <h2>SECTION 8 — TOOLS</h2>
+
+    <div class="tool-block">
+      <h3>Water and Food Calculator</h3>
+      <h4>Water Calculator</h4>
+      <p>Input number of people, days, activity level, climate, and special conditions. Outputs drinking water, sanitation water, and cooking water totals in liters and gallons, plus container counts and purification tablet requirements. Updates live as you change inputs.</p>
+      <h4>Food Calculator</h4>
+      <p>Input people, days, activity level, and age group factors. Outputs total calories, macros, practical storage weight, and conversion to common stored food quantities.</p>
+      <h4>Storage Planner</h4>
+      <p>Combined view showing total water volume, food weight, storage space needed, container manifest, rotation schedule, and acquisition priority order.</p>
+      <h4>Reference</h4>
+      <p>Water purification comparison, food shelf life table, caloric density reference, dehydration signs, starvation timeline.</p>
+    </div>
+
+    <div class="tool-block">
+      <h3>Communications Planner</h3>
+      <h4>Frequency Planner</h4>
+      <p>Build your PACE frequency plan. Select radio type, assign channels, set CTCSS tones, tag each channel with its use case. Output is a formatted PACE card designed to be screenshot.</p>
+      <h4>Net Schedule Builder</h4>
+      <p>Input your net name, NCS callsign, stations, and check-in frequency. Generates a full 24-hour net schedule and a net log template.</p>
+      <h4>Range Estimator</h4>
+      <p>Input radio type, power output, antenna type, and terrain. Outputs estimated ground-to-ground and ground-to-elevated range with a schematic range diagram.</p>
+      <h4>Meshtastic Planner</h4>
+      <p>Input node count, node types, terrain, and target coverage area. Outputs coverage analysis, gap analysis, repeater placement recommendations, and hardware cost estimate.</p>
+      <h4>Reference</h4>
+      <p>US radio band quick reference, GMRS channel chart, HAM band plan, phonetic alphabet, COMSEC checklist.</p>
+    </div>
+
+    <div class="tool-block">
+      <h3>Gear Loadout Builder</h3>
+      <h4>Build</h4>
+      <p>Three expandable layers — EDC (Every Day Carry), INCH Bag, Vehicle/Base Kit. 79 pre-populated items across all three layers. Check items you have. Add custom items. Enter weights.</p>
+      <h4>Weight Analysis</h4>
+      <p>Live weight tracking per layer. Carry percentage vs body weight. Category breakdown. Missing category flags.</p>
+      <h4>Readiness Score</h4>
+      <p>Scored across 8 categories — Medical, Water, Fire/Shelter, Navigation, Communications, Security, Food, Documentation. Overall Tier rating from Tier 1 Operator down to Unprepared.</p>
+      <h4>Resupply Tracker</h4>
+      <p>Track consumable expiration dates. Color-coded alerts — red for rotate now, yellow for rotate soon, green for good.</p>
+      <h4>Reference</h4>
+      <p>Common gear failures, weight reduction strategies, EDC philosophy, gear quality tiers by category.</p>
+    </div>
+
+    <div class="tool-block">
+      <h3>Offline Compass</h3>
+      <p>Analog compass rose with bearing lock, True North and Magnetic North toggle, back bearing calculation, GPS position overlay, tactical mode, declination adjustment, and calibration screen.</p>
+    </div>
+
+    <div class="tool-block">
+      <h3>Power and Electrical Reference</h3>
+      <p>Seven tabs: Power Calculator, Ohm's Law, Wire Sizing guide, Voltage Reference, Electrical Formulas, Fuse Guide, Battery Comparison.</p>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════
+       SECTION 9 — REFERENCE CARDS
+  ════════════════════════════════════════ -->
+  <div class="manual-section" id="s9">
+    <h2>SECTION 9 — REFERENCE CARDS</h2>
+    <p>21 quick-access reference cards. Each card is a fast-read formatted reference on a single critical topic.</p>
+    <ul>
+      <li>Bug-out checklist</li>
+      <li>Chemical agent symptoms</li>
+      <li>Communications frequencies</li>
+      <li>KI dosing guide</li>
+      <li>Medical vitals reference</li>
+      <li>Meshtastic quickstart</li>
+      <li>Navigation quick reference</li>
+      <li>Nuclear shelter protection factors</li>
+      <li>Power quick reference</li>
+      <li>Radiation dose reference</li>
+      <li>Security assessment checklist</li>
+      <li>Signals reference</li>
+      <li>Trauma first aid</li>
+      <li>Water treatment methods</li>
+      <li>Weather reading</li>
+      <li>Fire starting reference</li>
+      <li>Plus 5 additional cards</li>
+    </ul>
+    <h3>How to use</h3>
+    <ol>
+      <li>Tap <strong>Reference</strong> on the home screen</li>
+      <li>Tap any card</li>
+      <li>Use the screenshot function on your phone to save cards you may need in the field</li>
+    </ol>
+    <div class="note-block">
+      <p>These cards work without the app. Screenshot them before you need them.</p>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════
+       SECTION 10 — SETTINGS
+  ════════════════════════════════════════ -->
+  <div class="manual-section" id="s10">
+    <h2>SECTION 10 — SETTINGS</h2>
+    <p>Access Settings via the gear icon in the top right of the home screen.</p>
+    <ul>
+      <li><strong>Display mode toggle</strong> — Light / Dark / Tactical Black</li>
+      <li><strong>Font size preference</strong></li>
+      <li><strong>Restore Purchases</strong> — tap to restore a previous purchase on a new device</li>
+      <li><strong>Premium status display</strong></li>
+      <li><strong>Reviewer unlock</strong> — tap the version number 7 times to unlock all content (for App Store review only)</li>
+      <li><strong>App version and copyright information</strong></li>
+    </ul>
+  </div>
+
+  <!-- ════════════════════════════════════════
+       SECTION 11 — OFFLINE USE
+  ════════════════════════════════════════ -->
+  <div class="manual-section" id="s11">
+    <h2>SECTION 11 — OFFLINE USE</h2>
+    <p>This app is built to work with zero network connectivity.</p>
+    <p><strong>What works offline:</strong> Everything. All 225+ modules, all tools, all reference cards, all calculators, all planners, the compass, the signal suite. Everything.</p>
+    <p><strong>What requires a connection:</strong> Nothing in v1.0 except the optional topographic map tile download (coming in a future update). That download is user-initiated. Nothing else phones home.</p>
+    <h3>To prepare for field use</h3>
+    <ol>
+      <li>Download the app while connected</li>
+      <li>Complete the purchase while connected</li>
+      <li>After that — airplane mode works permanently</li>
+    </ol>
+  </div>
+
+  <!-- ════════════════════════════════════════
+       SECTION 12 — TROUBLESHOOTING
+  ════════════════════════════════════════ -->
+  <div class="manual-section" id="s12">
+    <h2>SECTION 12 — TROUBLESHOOTING</h2>
+
+    <div class="trouble-item">
+      <p class="trouble-q">Purchase not showing as unlocked after buying</p>
+      <p class="trouble-a">Go to Settings and tap <strong>Restore Purchases</strong>. This re-validates your purchase with the App Store and restores premium access.</p>
+    </div>
+    <div class="trouble-item">
+      <p class="trouble-q">App showing locked content after reinstall</p>
+      <p class="trouble-a">Tap <strong>Restore Purchases</strong> in Settings. Your purchase is tied to your Apple ID or Google account — it is not lost when you reinstall.</p>
+    </div>
+    <div class="trouble-item">
+      <p class="trouble-q">Compass not showing accurate bearing</p>
+      <p class="trouble-a">Calibrate the compass — go to the compass screen, tap the calibration icon, and follow the figure-8 motion instructions. Keep the phone away from metal objects and magnets.</p>
+    </div>
+    <div class="trouble-item">
+      <p class="trouble-q">Flashlight not working in Signal Suite</p>
+      <p class="trouble-a">The Morse flasher requires camera permission to control the LED. Go to your phone Settings and grant camera permission to Tier 1 Dark 30.</p>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════
+       SECTION 13 — CONTACT AND SUPPORT
+  ════════════════════════════════════════ -->
+  <div class="manual-section" id="s13">
+    <h2>SECTION 13 — CONTACT AND SUPPORT</h2>
+    <p>For support, questions, or to report an issue:</p>
+    <p><strong>Email:</strong> <a href="mailto:tier1offgrid@protonmail.com">tier1offgrid@protonmail.com</a></p>
+    <p><strong>Support page:</strong> <a href="/dist/support.html">tier1offgrid.com/dist/support.html</a></p>
+    <p>This app is built and maintained by one person. Response times may vary. For urgent issues, Substack is the fastest path.</p>
+  </div>
+
+</div><!-- /.article-wrap -->
+
+<!-- ── Print button ── -->
+<button class="print-btn" onclick="window.print()" aria-label="Save as PDF">
+  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="6 9 6 2 18 2 18 9"/>
+    <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+    <rect x="6" y="14" width="12" height="8"/>
+  </svg>
+  SAVE AS PDF
+</button>
+
+<!-- ── Footer ── -->
+<footer class="page-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <span class="footer-brand">TIER-1 OFF-GRID</span>
+        <p class="footer-tagline">Built for what's coming.</p>
+      </div>
+      <div>
+        <div class="footer-links">
+          <a href="/">Home</a>
+          <span class="pipe">|</span>
+          <a href="/dist/dark30.html">Dark 30</a>
+          <span class="pipe">|</span>
+          <a href="/dist/support.html">Support</a>
+          <span class="pipe">|</span>
+          <a href="/dist/privacy-policy.html">Privacy Policy</a>
+          <span class="pipe">|</span>
+          <a href="/dist/terms-of-use.html">Terms of Use</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-copyright">&copy; 2026 Tier-1 Off-Grid.<br>All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script data-goatcounter="https://tier1offgrid.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
