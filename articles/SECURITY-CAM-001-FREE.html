@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>No-Cloud Home Security: Full PoE Camera and Local NVR Setup | Tier-1 Off-Grid</title>
+  <meta name="description" content="Reolink cameras, a local NVR, and zero subscription fees. Your footage stays on your property — not in a server farm in Virginia.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&family=Share+Tech+Mono&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://tier1offgrid.com/css/style.css">
+  <style>
+    :root {
+      --t1-black:   #111111;
+      --t1-dark:    #1A1A1A;
+      --t1-surface: #242424;
+      --t1-card:    #2D2D2D;
+      --t1-border:  #3D3D3D;
+      --t1-orange:  #C44A1A;
+      --t1-white:   #F0EDEA;
+      --t1-gray:    #888888;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--t1-black); color: var(--t1-white); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.75; }
+    .site-nav { background: var(--t1-dark); border-bottom: 1px solid var(--t1-border); padding: 1rem 2rem; }
+    .site-nav a { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 1.2rem; color: var(--t1-white); text-decoration: none; letter-spacing: 0.05em; }
+    .site-nav a:hover { color: var(--t1-orange); }
+    .article-wrap { max-width: 800px; margin: 0 auto; padding: 2.5rem 1.5rem 5rem; }
+    .article-header { border-left: 3px solid var(--t1-orange); padding-left: 1.25rem; margin-bottom: 2.5rem; }
+    .pillar-eyebrow { font-family: 'Share Tech Mono', monospace; font-size: 0.72rem; color: var(--t1-orange); letter-spacing: 0.18em; text-transform: uppercase; display: block; margin-bottom: 0.5rem; }
+    .article-header h1 { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: clamp(1.8rem, 5vw, 2.8rem); color: var(--t1-white); line-height: 1.15; margin-bottom: 0.5rem; }
+    .article-date { font-family: 'Share Tech Mono', monospace; font-size: 0.72rem; color: var(--t1-gray); letter-spacing: 0.12em; }
+    .article-content h2 { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 1.65rem; color: var(--t1-white); margin: 2.75rem 0 1rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--t1-border); }
+    .article-content h3 { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 1.25rem; color: var(--t1-orange); margin: 2rem 0 0.75rem; }
+    .article-content h4 { font-family: 'Share Tech Mono', monospace; font-size: 0.8rem; color: var(--t1-gray); letter-spacing: 0.12em; text-transform: uppercase; margin: 1.75rem 0 0.6rem; }
+    .article-content p { margin-bottom: 1.25rem; }
+    .article-content strong { color: var(--t1-white); font-weight: 600; }
+    .article-content em { color: var(--t1-gray); font-style: italic; }
+    .article-content ul, .article-content ol { margin: 0.75rem 0 1.25rem 1.5rem; }
+    .article-content li { margin-bottom: 0.45rem; }
+    .article-content hr { border: none; border-top: 1px solid var(--t1-border); margin: 2.25rem 0; }
+    .article-content a { color: var(--t1-orange); text-decoration: none; }
+    .article-content a:hover { text-decoration: underline; }
+    .article-content table { width: 100%; border-collapse: collapse; margin: 1.75rem 0; font-size: 0.9rem; }
+    .article-content thead { background: var(--t1-surface); border-bottom: 2px solid var(--t1-orange); }
+    .article-content th { font-family: 'Share Tech Mono', monospace; font-size: 0.72rem; color: var(--t1-orange); letter-spacing: 0.12em; text-transform: uppercase; padding: 0.75rem 1rem; text-align: left; }
+    .article-content td { padding: 0.65rem 1rem; border-bottom: 1px solid var(--t1-border); }
+    .article-content tr:nth-child(even) td { background: var(--t1-surface); }
+    .article-content blockquote { background: var(--t1-card); border-left: 3px solid var(--t1-orange); padding: 1rem 1.25rem; margin: 1.5rem 0; color: var(--t1-gray); }
+    .article-footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--t1-border); }
+    .btn-back { display: inline-block; font-family: 'Share Tech Mono', monospace; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--t1-white); background: var(--t1-surface); text-decoration: none; padding: 0.65rem 1.4rem; clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%); transition: background 0.2s, color 0.2s; }
+    .btn-back:hover { background: var(--t1-orange); color: var(--t1-white); }
+    @media (max-width: 600px) { .article-wrap { padding: 1.5rem 1rem 3rem; } .site-nav { padding: 0.75rem 1rem; } .article-content table { font-size: 0.78rem; } .article-content th, .article-content td { padding: 0.5rem 0.6rem; } }
+  </style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="/">Tier-1 Off-Grid</a>
+</nav>
+
+<div class="article-wrap">
+
+  <header class="article-header">
+    <span class="pillar-eyebrow">Security / PILLAR-03</span>
+    <h1>No-Cloud Home Security: Full PoE Camera and Local NVR Setup</h1>
+    <time class="article-date">2026-07-15</time>
+  </header>
+
+  <div class="article-content">
+
+    <h2>The Camera Pointed at Your House Is Reporting to Someone Else</h2>
+
+    <p>Ring, Nest, Arlo, Blink — every one of those brands stores your footage on a corporate cloud server. That means your driveway, your front door, your kids coming home from school, your vehicle in the driveway at 2am — all of it on a server you don't control, subject to terms of service you didn't read, accessible to law enforcement on request, hackable by anyone who finds the right vulnerability.</p>
+
+    <p>Amazon owns Ring. Google owns Nest. These are not security companies. They are data companies that sell you a camera so they can collect your footage.</p>
+
+    <p>There's a better way. PoE cameras, a local NVR, and footage that never leaves your property. No subscription. No cloud. No one watching your feed but you.</p>
+
+    <hr>
+
+    <h2>Why PoE Over Wireless</h2>
+
+    <p><strong>PoE (Power over Ethernet)</strong> runs both power and data over a single CAT5e or CAT6 cable. One cable per camera — that's it. No Wi-Fi passwords. No interference. No battery changes. No video stuttering when your neighbor runs their microwave.</p>
+
+    <p>Wireless cameras fail in the field. PoE systems work. Ask anyone who's built both.</p>
+
+    <p>Secondary advantage: a PoE system runs on your local network only. Wireless cameras are almost always cloud-dependent by design. PoE cameras can be configured to <em>never touch the internet at all</em>, which is exactly what you want.</p>
+
+    <hr>
+
+    <h2>What You Need</h2>
+
+    <ul>
+      <li><strong>IP cameras</strong> — 4K or 5MP PoE, weatherproof, with IR night vision</li>
+      <li><strong>NVR (Network Video Recorder)</strong> — local storage, no cloud required</li>
+      <li><strong>PoE switch or PoE NVR with built-in switch</strong> — powers cameras over the same cable</li>
+      <li><strong>CAT6 cable</strong> — run from NVR location to each camera mount point</li>
+      <li><strong>Hard drive</strong> — installed in the NVR for local footage storage</li>
+      <li><strong>Optional: monitor</strong> — plug directly into NVR for local live view</li>
+    </ul>
+
+    <hr>
+
+    <h2>Recommended Gear</h2>
+
+    <h3>Cameras: Reolink and Amcrest</h3>
+
+    <p><strong>Reolink RLC-810A</strong> — 8MP (4K) PoE IP camera. Color night vision, motion detection zones, smart detection (person/vehicle). Works fully locally — no Reolink cloud account required. One of the best values in the no-cloud space. Around $45–55 per camera.</p>
+
+    <p><strong>Reolink RLC-823A</strong> — adds a spotlight for color night vision and an audio speaker for two-way communication and deterrent alerts. If your budget allows, this is the upgrade worth making on entry points. Around $65–75.</p>
+
+    <p><strong>Amcrest UltraHD 4K PoE</strong> — solid alternative if Reolink is out of stock. Good motion zones, similar feature set. Comparable price. Amcrest's local recording mode works without their cloud service.</p>
+
+    <blockquote>
+      <p><strong>Affiliate note:</strong> Reolink runs an affiliate program at 8–12% commission. We link their gear because we'd use it ourselves, not because of the commission — but it does help keep this site running. Your cost is the same either way.</p>
+    </blockquote>
+
+    <h3>NVR: Reolink or Synology</h3>
+
+    <p><strong>Reolink RLN8-410</strong> — 8-channel PoE NVR. Built-in 8-port PoE switch, supports up to 6TB HDD, HDMI output, H.265 compression. This is the simplest path if you're using Reolink cameras — plug the cameras into the NVR directly and it just works. No separate switch needed. Around $150–180.</p>
+
+    <p><strong>Synology DS923+</strong> — for the operator who wants full control. Synology's Surveillance Station software supports cameras from any brand, runs locally with zero cloud dependency, and gives you granular control over retention schedules, motion zones, and alerts. More expensive and more complex — but enterprise-grade local control. Synology does not require a subscription or internet connection.</p>
+
+    <h3>Hard Drive</h3>
+
+    <p><strong>Western Digital Purple 4TB or 6TB</strong> — these drives are designed specifically for continuous write cycles in surveillance applications. Standard desktop drives will fail early when writing video 24/7. Don't cheap out here. A 4TB drive at full 1080p recording across 8 cameras gives you approximately 15–30 days of footage retention.</p>
+
+    <hr>
+
+    <h2>Setup Walkthrough</h2>
+
+    <h4>Step 1 — Plan Camera Placement</h4>
+    <p>Walk your property and identify chokepoints: driveway entrance, front door, back door, garage, any secondary access points. Cameras should overlap where possible so there are no blind spots. Height matters — 8–10 feet is ideal. High enough to capture faces but not so high you lose face detail.</p>
+
+    <h4>Step 2 — Run Cable</h4>
+    <p>CAT6 plenum-rated cable through walls or conduit from your NVR location to each camera mount. Label each cable at both ends. This is the most work in the whole project. Do it right — fishing cable after the fact is miserable. Budget 2–4 hours depending on property size and construction.</p>
+
+    <h4>Step 3 — Mount Cameras</h4>
+    <p>Use the included junction boxes or surface mount boxes to weatherproof the cable entry point. Silicone-seal around the cable exit. Angle cameras to capture the zone you need — adjust before tightening.</p>
+
+    <h4>Step 4 — Connect to NVR</h4>
+    <p>Plug camera cables into the NVR's PoE ports. Power on the NVR. Cameras should auto-detect within a minute. If using a separate PoE switch, connect the switch to the NVR via standard ethernet and cameras to the switch.</p>
+
+    <h4>Step 5 — Configure Storage and Alerts</h4>
+    <p>Install your hard drive in the NVR. Format it through the NVR interface. Set motion detection zones per camera — keep them tight on the areas that matter to reduce false alerts. Set retention to overwrite oldest footage when full.</p>
+
+    <h4>Step 6 — Block Internet Access</h4>
+    <p>In your router's DHCP settings or firewall rules, block outbound internet access from the NVR's IP address and all camera IP addresses. Your NVR should have a local IP (e.g., 192.168.1.x). Block it at the router level. This ensures no footage or data ever leaves your network — even if a software update changes default settings.</p>
+
+    <p>Test by unplugging your internet modem completely — your cameras should still record locally and display on the NVR monitor without interruption.</p>
+
+    <h4>Step 7 — Remote Access (Optional)</h4>
+    <p>If you want to view cameras remotely from your phone, don't use the manufacturer's cloud relay. Instead, set up a <strong>WireGuard VPN</strong> on your router (many support it natively — pfSense, OpenWrt, Firewalla all do). Connect to your home VPN from your phone, then view the NVR's local IP. Your footage stays on your hardware. Zero cloud exposure.</p>
+
+    <hr>
+
+    <h2>Perimeter Beyond Cameras</h2>
+
+    <p>Cameras record what happened. They don't stop it. Layer your security:</p>
+
+    <ul>
+      <li><strong>Motion-activated lighting</strong> — Reolink spotlight cameras handle this, or add standalone PIR-triggered lights at entry points</li>
+      <li><strong>Perimeter alert sensors</strong> — driveway alert systems (Dakota Alert DCMA-4000 is the standard — long range, no Wi-Fi, runs on D batteries) give you audio notification before anyone reaches your structure</li>
+      <li><strong>Physical hardening</strong> — camera systems are intelligence tools, not access controls. Deadbolts, reinforced door frames, window pins, and dogs remain primary deterrents</li>
+    </ul>
+
+    <hr>
+
+    <h2>DIY Section: Build It Before You Need It — Or After</h2>
+
+    <hr>
+
+    <h3>Tier 1 — The Prepared Builder</h3>
+    <p><em>Full local camera system, built right, owned completely.</em></p>
+
+    <p>Follow the setup guide above. Full Reolink 4-camera PoE system with NVR and 4TB drive runs about <strong>$350–$500 all-in</strong>. That's one-time. No monthly fees. No renewal. No data leaving your property.</p>
+
+    <p>Add the Dakota Alert driveway sensor for another $100 and you have an early-warning system that triggers before any camera even sees motion.</p>
+
+    <p><strong>Total hardened perimeter system: under $600.</strong> One Ring subscription runs $10–20/month — $200–400/year — forever, for footage you don't own, stored somewhere you can't control.</p>
+
+    <hr>
+
+    <h3>Tier 2 — Emergency and Low-Budget Options</h3>
+    <p><em>Grid down. Budget gone. You still need to know who's on your property.</em></p>
+
+    <h4>The $40 Driveway Alert System</h4>
+    <p>A Dakota Alert MURS wireless system or any PIR-based driveway sensor alert gives you audio notification when someone crosses the beam. No camera needed. Runs on D batteries for months. Range up to 1,500 feet. This is low-tech and it works.</p>
+
+    <h4>Trip Wire + Visual Alert</h4>
+    <p>Fishing line across a path, connected to empty cans on a wire. Old-school. Silent. No batteries. Works in a total grid-down scenario. Not embarrassing — it's field-proven over decades of actual conflict.</p>
+
+    <h4>Guard Dog</h4>
+    <p>No electronic system provides the combination of early warning, deterrence, threat assessment, and active response that a trained dog does. Before any camera purchase, consider whether your security perimeter has a dog in it. The answer probably should be yes.</p>
+
+    <h4>Repurpose Old Smartphones as Cameras</h4>
+    <p>An old Android phone running Alfred Security Camera app (local-only mode) can monitor a doorway and store footage locally via SD card. Not a permanent solution, but if you have an old phone gathering dust, it costs $0 to deploy tonight.</p>
+
+    <h4>What to Stockpile Now</h4>
+    <ul>
+      <li>One 500-foot spool of CAT6 — $25–35 at any hardware store</li>
+      <li>Spare D batteries for driveway sensors</li>
+      <li>Motion-activated trail cameras (the hunting kind) — $30–60 each, completely off-grid, SD card storage, no Wi-Fi, no cloud</li>
+    </ul>
+
+    <p><em>Trail cameras are one of the most underrated perimeter tools available. They're cheap, weatherproof, battery-powered, completely offline, and motion-triggered. If you're on a budget, a few Browning or Bushnell trail cameras covering your access points cost less than one Ring camera and require zero subscription.</em></p>
+
+    <hr>
+
+    <h2>The Mindset</h2>
+
+    <p>Your security footage should belong to you. Full stop. The moment you hand it to a corporation — even a friendly-sounding one — you've created a surveillance file on your own property that someone else controls.</p>
+
+    <p>What happens when Ring gets hacked? When Nest has a data breach? When law enforcement sends a subpoena to Amazon? You're not a customer in those scenarios. You're the product.</p>
+
+    <p>Build local. Own your footage. Know who's on your land before they know you know.</p>
+
+    <p><em>— Tier-1 Off-Grid</em></p>
+
+    <hr>
+
+    <p><em>Next: De-Googling your phone and your life — every service replaced, step by step.</em></p>
+    <p><em>Not subscribed yet? Fix that at <a href="https://tier1offgrid.substack.com">tier1offgrid.substack.com</a>.</em></p>
+
+  </div>
+
+  <footer class="article-footer">
+    <a href="/articles/" class="btn-back">← Back to Articles</a>
+  </footer>
+
+</div>
+
+<script data-goatcounter="https://tier1offgrid.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
